@@ -696,6 +696,125 @@ a:hover { text-decoration: underline; }
   color: #555;
   font-weight: 600;
 }
+/* ============================================================
+   DIGITAL SIGNATURE & STAMP
+   ============================================================ */
+
+.digital-signature-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 10px 0 18px;
+  padding: 12px 15px;
+  background: #F7F9F8;
+  border: 1px solid #D1E0D7;
+  border-radius: 8px;
+}
+
+.digital-signature-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.digital-signature-info strong {
+  color: #0F5132;
+  font-size: .9rem;
+}
+
+.digital-signature-info span {
+  color: #7A8A82;
+  font-size: .75rem;
+}
+
+/* Sliding switch */
+.digital-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.digital-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.digital-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #CBD5D0;
+  border-radius: 30px;
+  transition: .25s ease;
+}
+
+.digital-slider::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,.25);
+  transition: .25s ease;
+}
+
+.digital-switch input:checked + .digital-slider {
+  background: #0F5132;
+}
+
+.digital-switch input:checked + .digital-slider::before {
+  transform: translateX(24px);
+}
+
+/* Digital signature/stamp images are hidden by default */
+.digital-signature-image {
+  display: none;
+  object-fit: contain;
+  margin: 0 auto 6px;
+}
+
+/* Authorized Signature */
+.authorized-signature-image {
+  width: 150px;
+  height: 55px;
+}
+
+/* Official Stamp */
+.official-stamp-image {
+  width: 85px;
+  height: 85px;
+}
+
+/* When Digital Mode is ON */
+.receipt-page.digital-mode .digital-signature-image {
+  display: block;
+}
+
+.receipt-page.digital-mode .receipt-signature-line.digital-line {
+  display: none;
+}
+
+/* Print/PDF */
+@media print {
+  .digital-signature-control {
+    display: none !important;
+  }
+
+  .receipt-page.digital-mode .digital-signature-image {
+    display: block !important;
+  }
+
+  .receipt-page.digital-mode .receipt-signature-line.digital-line {
+    display: none !important;
+  }
+}
 
 .receipt-footer {
   margin-top: 30px;
@@ -1434,7 +1553,22 @@ a:hover { text-decoration: underline; }
           <textarea id="remarks" class="form-textarea" rows="3" placeholder="Any additional notes..."></textarea>
         </div>
       </div>
+<!-- Digital Signature & Stamp Toggle -->
+<div class="digital-signature-control">
 
+  <div class="digital-signature-info">
+    <strong>Digital Signature & Stamp</strong>
+    <span id="digitalModeStatus">
+      OFF — Blank signature & stamp
+    </span>
+  </div>
+
+  <label class="digital-switch">
+    <input type="checkbox" id="digitalSignatureToggle">
+    <span class="digital-slider"></span>
+  </label>
+
+</div>
       <!-- Action Buttons -->
       <div class="action-buttons">
         <button class="btn btn-primary" id="generateReceiptBtn">Generate Receipt</button>
@@ -1578,20 +1712,52 @@ a:hover { text-decoration: underline; }
           </div>
 
           <!-- Signatures -->
-          <div class="receipt-signatures">
-            <div class="receipt-signature-item">
-              <div class="receipt-signature-line"></div>
-              <p>Receiver's Signature</p>
-            </div>
-            <div class="receipt-signature-item">
-              <div class="receipt-signature-line"></div>
-              <p>Authorized Signature</p>
-            </div>
-            <div class="receipt-signature-item">
-              <div class="receipt-signature-line"></div>
-              <p>Official Stamp</p>
-            </div>
-          </div>
+<div class="receipt-signatures">
+
+  <!-- Receiver Signature - Always Blank -->
+  <div class="receipt-signature-item">
+
+    <div class="receipt-signature-line"></div>
+
+    <p>Receiver's Signature</p>
+
+  </div>
+
+
+  <!-- Authorized Signature -->
+  <div class="receipt-signature-item">
+
+    <img
+      src="./sign.jpg"
+      alt="Authorized Signature"
+      class="digital-signature-image authorized-signature-image"
+      id="authorizedSignatureImage"
+    >
+
+    <div class="receipt-signature-line digital-line"></div>
+
+    <p>Authorized Signature</p>
+
+  </div>
+
+
+  <!-- Official Stamp -->
+  <div class="receipt-signature-item">
+
+    <img
+      src="./stamp.jpg"
+      alt="Official Stamp"
+      class="digital-signature-image official-stamp-image"
+      id="officialStampImage"
+    >
+
+    <div class="receipt-signature-line digital-line"></div>
+
+    <p>Official Stamp</p>
+
+  </div>
+
+</div>
 
           <!-- Footer -->
           <div class="receipt-footer">
@@ -2796,7 +2962,37 @@ async function submitPayment() {
     showNotification('Payment saved successfully. You can now print or save as PDF.', 'success');
   }
 }
+/* ============================================================
+   DIGITAL SIGNATURE & STAMP TOGGLE
+   ============================================================ */
 
+function toggleDigitalSignatureMode() {
+
+  var toggle = document.getElementById('digitalSignatureToggle');
+  var receiptPage = document.getElementById('receiptPage');
+  var status = document.getElementById('digitalModeStatus');
+
+  if (!toggle || !receiptPage) return;
+
+  if (toggle.checked) {
+
+    // Turn ON digital signature & stamp
+    receiptPage.classList.add('digital-mode');
+
+    if (status) {
+      status.textContent = 'ON — Digital signature & stamp enabled';
+    }
+
+  } else {
+
+    // Turn OFF digital signature & stamp
+    receiptPage.classList.remove('digital-mode');
+
+    if (status) {
+      status.textContent = 'OFF — Blank signature & stamp';
+    }
+  }
+}
 /* ============================================================
    PRINTING & PDF
    ============================================================ */
@@ -2850,7 +3046,14 @@ function clearForm() {
   document.getElementById('amountPaid').value = '';
   document.getElementById('paymentMode').value = '';
   document.getElementById('remarks').value = '';
+// Reset Digital Signature & Stamp
+var digitalToggle =
+  document.getElementById('digitalSignatureToggle');
 
+if (digitalToggle) {
+  digitalToggle.checked = false;
+  toggleDigitalSignatureMode();
+}
   // Reset conditional displays
   document.getElementById('paymentPurposeGroup').style.display = 'none';
   document.getElementById('monthGroup').style.display = 'none';
@@ -2986,7 +3189,16 @@ function setupEventListeners() {
   document.getElementById('printReceiptBtn').addEventListener('click', printReceipt);
   document.getElementById('savePdfBtn').addEventListener('click', saveAsPDF);
   document.getElementById('clearFormBtn').addEventListener('click', clearForm);
+// Digital Signature & Stamp Toggle
+var digitalSignatureToggle =
+  document.getElementById('digitalSignatureToggle');
 
+if (digitalSignatureToggle) {
+  digitalSignatureToggle.addEventListener(
+    'change',
+    toggleDigitalSignatureMode
+  );
+}
   // Course management
   document.getElementById('addCourseBtn').addEventListener('click', addCourse);
   document.getElementById('updateCourseBtn').addEventListener('click', updateCourse);
