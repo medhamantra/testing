@@ -1,0 +1,41 @@
+[
+  {
+    "mockId": "WBCS-M01",
+    "courseId": "WBCS",
+    "mockName": "WBCS Full Mock Test 01",
+    "totalQuestions": 40,
+    "duration": 40,
+    "negativeMarking": 0.25,
+    "marksPerQuestion": 1,
+    "sectionWise": true,
+    "shuffleQuestions": true,
+    "shuffleOptions": true,
+
+    "sections": [
+      {
+        "sectionId": "GEN",
+        "sectionName": "General Studies",
+        "questions": 10,
+        "duration": 10
+      },
+      {
+        "sectionId": "ENG",
+        "sectionName": "English",
+        "questions": 10,
+        "duration": 10
+      },
+      {
+        "sectionId": "MATH",
+        "sectionName": "Mathematics",
+        "questions": 10,
+        "duration": 10
+      },
+      {
+        "sectionId": "REASON",
+        "sectionName": "Reasoning",
+        "questions": 10,
+        "duration": 10
+      }
+    ]
+  }
+]
