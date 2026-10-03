@@ -1,0 +1,17 @@
+[
+  {
+    "roll": "MM1001",
+    "name": "Rahul Das",
+    "courses": ["WBCS", "SSC"]
+  },
+  {
+    "roll": "MM1002",
+    "name": "Priya Roy",
+    "courses": ["WBCS"]
+  },
+  {
+    "roll": "MM1003",
+    "name": "Amit Ghosh",
+    "courses": ["SSC", "BANKING"]
+  }
+]
