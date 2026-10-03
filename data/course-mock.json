@@ -39,3 +39,16 @@
     ]
   }
 ]
+{
+  "mockId": "WBCS-M02",
+  "courseId": "WBCS",
+  "mockName": "WBCS Mixed Mock Test 02",
+  "totalQuestions": 40,
+  "duration": 40,
+  "negativeMarking": 0.25,
+  "marksPerQuestion": 1,
+  "sectionWise": false,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sections": []
+}
