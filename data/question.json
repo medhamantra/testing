@@ -507,3 +507,488 @@
     ]
   }
 ]
+{
+  "mockId": "WBCS-M02",
+  "questions": [
+    {
+      "id": "WBCS-M02-001",
+      "question": "Who is the constitutional head of an Indian state?",
+      "options": [
+        "Chief Minister",
+        "Governor",
+        "President",
+        "Prime Minister"
+      ],
+      "answer": 1,
+      "explanation": "The Governor is the constitutional head of an Indian state."
+    },
+    {
+      "id": "WBCS-M02-002",
+      "question": "Choose the correct synonym of 'Rapid'.",
+      "options": [
+        "Slow",
+        "Quick",
+        "Weak",
+        "Late"
+      ],
+      "answer": 1,
+      "explanation": "Quick means rapid or fast."
+    },
+    {
+      "id": "WBCS-M02-003",
+      "question": "What is 25% of 200?",
+      "options": [
+        "25",
+        "40",
+        "50",
+        "75"
+      ],
+      "answer": 2,
+      "explanation": "25% of 200 is 50."
+    },
+    {
+      "id": "WBCS-M02-004",
+      "question": "Find the next number: 2, 4, 6, 8, ?",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "answer": 1,
+      "explanation": "The numbers increase by 2, so the next number is 10."
+    },
+    {
+      "id": "WBCS-M02-005",
+      "question": "What is the capital of West Bengal?",
+      "options": [
+        "Durgapur",
+        "Siliguri",
+        "Kolkata",
+        "Howrah"
+      ],
+      "answer": 2,
+      "explanation": "Kolkata is the capital of West Bengal."
+    },
+    {
+      "id": "WBCS-M02-006",
+      "question": "Choose the correct antonym of 'Ancient'.",
+      "options": [
+        "Old",
+        "Modern",
+        "Historic",
+        "Past"
+      ],
+      "answer": 1,
+      "explanation": "Modern is the antonym of ancient."
+    },
+    {
+      "id": "WBCS-M02-007",
+      "question": "What is 12 × 8?",
+      "options": [
+        "86",
+        "96",
+        "108",
+        "112"
+      ],
+      "answer": 1,
+      "explanation": "12 × 8 = 96."
+    },
+    {
+      "id": "WBCS-M02-008",
+      "question": "Find the odd one out.",
+      "options": [
+        "Apple",
+        "Mango",
+        "Potato",
+        "Banana"
+      ],
+      "answer": 2,
+      "explanation": "Potato is a vegetable while the others are fruits."
+    },
+    {
+      "id": "WBCS-M02-009",
+      "question": "Who was the first President of India?",
+      "options": [
+        "Dr. Rajendra Prasad",
+        "Dr. S. Radhakrishnan",
+        "Jawaharlal Nehru",
+        "Zakir Husain"
+      ],
+      "answer": 0,
+      "explanation": "Dr. Rajendra Prasad was the first President of India."
+    },
+    {
+      "id": "WBCS-M02-010",
+      "question": "Choose the correct spelling.",
+      "options": [
+        "Accomodation",
+        "Accommodation",
+        "Acommodation",
+        "Accommadation"
+      ],
+      "answer": 1,
+      "explanation": "The correct spelling is Accommodation."
+    },
+    {
+      "id": "WBCS-M02-011",
+      "question": "What is the square of 15?",
+      "options": [
+        "125",
+        "200",
+        "225",
+        "250"
+      ],
+      "answer": 2,
+      "explanation": "15 × 15 = 225."
+    },
+    {
+      "id": "WBCS-M02-012",
+      "question": "If CAT is coded as DBU, how is DOG coded?",
+      "options": [
+        "EPH",
+        "EOG",
+        "FPH",
+        "DPG"
+      ],
+      "answer": 0,
+      "explanation": "Each letter is shifted one position forward: D→E, O→P, G→H."
+    },
+    {
+      "id": "WBCS-M02-013",
+      "question": "Which gas is most abundant in Earth's atmosphere?",
+      "options": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon Dioxide",
+        "Hydrogen"
+      ],
+      "answer": 1,
+      "explanation": "Nitrogen makes up about 78% of Earth's atmosphere."
+    },
+    {
+      "id": "WBCS-M02-014",
+      "question": "Identify the noun: 'Honesty is the best policy.'",
+      "options": [
+        "Is",
+        "Best",
+        "Honesty",
+        "The"
+      ],
+      "answer": 2,
+      "explanation": "Honesty is a noun."
+    },
+    {
+      "id": "WBCS-M02-015",
+      "question": "If 5 pens cost ₹50, what is the cost of one pen?",
+      "options": [
+        "₹5",
+        "₹10",
+        "₹15",
+        "₹20"
+      ],
+      "answer": 1,
+      "explanation": "₹50 ÷ 5 = ₹10."
+    },
+    {
+      "id": "WBCS-M02-016",
+      "question": "Which number comes next: 5, 10, 20, 40, ?",
+      "options": [
+        "50",
+        "60",
+        "80",
+        "100"
+      ],
+      "answer": 2,
+      "explanation": "Each number is multiplied by 2."
+    },
+    {
+      "id": "WBCS-M02-017",
+      "question": "Who is known as the Father of the Indian Constitution?",
+      "options": [
+        "Mahatma Gandhi",
+        "B. R. Ambedkar",
+        "Jawaharlal Nehru",
+        "Sardar Patel"
+      ],
+      "answer": 1,
+      "explanation": "Dr. B. R. Ambedkar chaired the Drafting Committee."
+    },
+    {
+      "id": "WBCS-M02-018",
+      "question": "Choose the correct article: He is ___ honest man.",
+      "options": [
+        "A",
+        "An",
+        "The",
+        "No article"
+      ],
+      "answer": 1,
+      "explanation": "The correct article is 'an' because honest begins with a vowel sound."
+    },
+    {
+      "id": "WBCS-M02-019",
+      "question": "What is the average of 10, 20 and 30?",
+      "options": [
+        "15",
+        "20",
+        "25",
+        "30"
+      ],
+      "answer": 1,
+      "explanation": "(10 + 20 + 30) ÷ 3 = 20."
+    },
+    {
+      "id": "WBCS-M02-020",
+      "question": "If today is Monday, what day will it be after 3 days?",
+      "options": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "answer": 2,
+      "explanation": "Monday + 3 days = Thursday."
+    },
+    {
+      "id": "WBCS-M02-021",
+      "question": "Which is the largest planet in the Solar System?",
+      "options": [
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn"
+      ],
+      "answer": 2,
+      "explanation": "Jupiter is the largest planet in the Solar System."
+    },
+    {
+      "id": "WBCS-M02-022",
+      "question": "Choose the correct plural of 'Child'.",
+      "options": [
+        "Childs",
+        "Childes",
+        "Children",
+        "Childrens"
+      ],
+      "answer": 2,
+      "explanation": "The correct plural form is Children."
+    },
+    {
+      "id": "WBCS-M02-023",
+      "question": "What is 3/4 of 100?",
+      "options": [
+        "25",
+        "50",
+        "75",
+        "80"
+      ],
+      "answer": 2,
+      "explanation": "3/4 × 100 = 75."
+    },
+    {
+      "id": "WBCS-M02-024",
+      "question": "Complete the series: A, C, E, G, ?",
+      "options": [
+        "H",
+        "I",
+        "J",
+        "K"
+      ],
+      "answer": 1,
+      "explanation": "The series skips one letter each time: A, C, E, G, I."
+    },
+    {
+      "id": "WBCS-M02-025",
+      "question": "Where is the headquarters of the United Nations?",
+      "options": [
+        "London",
+        "Paris",
+        "New York",
+        "Geneva"
+      ],
+      "answer": 2,
+      "explanation": "The headquarters of the United Nations is in New York City."
+    },
+    {
+      "id": "WBCS-M02-026",
+      "question": "Choose the correct tense: 'She ___ to school every day.'",
+      "options": [
+        "go",
+        "goes",
+        "going",
+        "gone"
+      ],
+      "answer": 1,
+      "explanation": "The correct form is 'goes' for third-person singular."
+    },
+    {
+      "id": "WBCS-M02-027",
+      "question": "What is the HCF of 12 and 18?",
+      "options": [
+        "3",
+        "6",
+        "9",
+        "12"
+      ],
+      "answer": 1,
+      "explanation": "The HCF of 12 and 18 is 6."
+    },
+    {
+      "id": "WBCS-M02-028",
+      "question": "Which one is different from the others?",
+      "options": [
+        "Square",
+        "Triangle",
+        "Circle",
+        "Rectangle"
+      ],
+      "answer": 2,
+      "explanation": "A circle has no straight sides."
+    },
+    {
+      "id": "WBCS-M02-029",
+      "question": "Which article of the Indian Constitution deals with equality before law?",
+      "options": [
+        "Article 12",
+        "Article 14",
+        "Article 19",
+        "Article 21"
+      ],
+      "answer": 1,
+      "explanation": "Article 14 deals with equality before law and equal protection of laws."
+    },
+    {
+      "id": "WBCS-M02-030",
+      "question": "What is the opposite of 'Victory'?",
+      "options": [
+        "Success",
+        "Defeat",
+        "Win",
+        "Achievement"
+      ],
+      "answer": 1,
+      "explanation": "Defeat is the opposite of victory."
+    },
+    {
+      "id": "WBCS-M02-031",
+      "question": "What is 1000 ÷ 25?",
+      "options": [
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "answer": 2,
+      "explanation": "1000 ÷ 25 = 40."
+    },
+    {
+      "id": "WBCS-M02-032",
+      "question": "If 1 = A, 2 = B, 3 = C, then 4 = ?",
+      "options": [
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answer": 1,
+      "explanation": "The fourth letter of the alphabet is D."
+    },
+    {
+      "id": "WBCS-M02-033",
+      "question": "Which is the national animal of India?",
+      "options": [
+        "Lion",
+        "Elephant",
+        "Tiger",
+        "Leopard"
+      ],
+      "answer": 2,
+      "explanation": "The Bengal Tiger is the national animal of India."
+    },
+    {
+      "id": "WBCS-M02-034",
+      "question": "Choose the correct preposition: He is good ___ mathematics.",
+      "options": [
+        "in",
+        "at",
+        "on",
+        "for"
+      ],
+      "answer": 1,
+      "explanation": "The correct expression is 'good at mathematics'."
+    },
+    {
+      "id": "WBCS-M02-035",
+      "question": "A train travels 60 km in 1 hour. How far will it travel in 3 hours?",
+      "options": [
+        "120 km",
+        "150 km",
+        "180 km",
+        "200 km"
+      ],
+      "answer": 2,
+      "explanation": "60 × 3 = 180 km."
+    },
+    {
+      "id": "WBCS-M02-036",
+      "question": "Find the missing number: 3, 6, 9, 12, ?",
+      "options": [
+        "14",
+        "15",
+        "16",
+        "18"
+      ],
+      "answer": 1,
+      "explanation": "The sequence increases by 3."
+    },
+    {
+      "id": "WBCS-M02-037",
+      "question": "Which river is known as the longest river in India?",
+      "options": [
+        "Yamuna",
+        "Ganga",
+        "Godavari",
+        "Narmada"
+      ],
+      "answer": 1,
+      "explanation": "The Ganga is generally regarded as India's longest river."
+    },
+    {
+      "id": "WBCS-M02-038",
+      "question": "Choose the correct meaning of 'Benevolent'.",
+      "options": [
+        "Cruel",
+        "Kind",
+        "Angry",
+        "Lazy"
+      ],
+      "answer": 1,
+      "explanation": "Benevolent means kind and charitable."
+    },
+    {
+      "id": "WBCS-M02-039",
+      "question": "What is 15 + 25?",
+      "options": [
+        "30",
+        "35",
+        "40",
+        "45"
+      ],
+      "answer": 2,
+      "explanation": "15 + 25 = 40."
+    },
+    {
+      "id": "WBCS-M02-040",
+      "question": "A is taller than B and B is taller than C. Who is the shortest?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "Cannot be determined"
+      ],
+      "answer": 2,
+      "explanation": "Since A is taller than B and B is taller than C, C is the shortest."
+    }
+  ]
+}
