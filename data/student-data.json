@@ -9,7 +9,508 @@
     "name": "Priya Roy",
     "courses": ["WBCS"]
   },
+  {[
   {
+    "roll": "MM1001",
+    "name": "Rahul Das",
+    "courses": ["SSC", "BANK"]
+  },
+  {
+    "roll": "MM1002",
+    "name": "Priya Roy",
+    "courses": ["PRIMARY TET"]
+  },
+  {
+    "roll": "MM1003",
+    "name": "Amit Ghosh",
+    "courses": ["SSC", "RAIL"]
+  },
+  {
+    "roll": "MM1004",
+    "name": "Sneha Paul",
+    "courses": ["UPPER PRIMARY TET", "PRIMARY TET"]
+  },
+  {
+    "roll": "MM1005",
+    "name": "Sourav Dutta",
+    "courses": ["BANK", "SSC"]
+  },
+  {
+    "roll": "MM1006",
+    "name": "Moumita Das",
+    "courses": ["ICDS"]
+  },
+  {
+    "roll": "MM1007",
+    "name": "Abhishek Roy",
+    "courses": ["RAIL", "SSC"]
+  },
+  {
+    "roll": "MM1008",
+    "name": "Riya Ghosh",
+    "courses": ["PRIMARY TET", "UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1009",
+    "name": "Arindam Paul",
+    "courses": ["PANCHAYAT"]
+  },
+  {
+    "roll": "MM1010",
+    "name": "Puja Das",
+    "courses": ["SSC", "BANK"]
+  },
+  {
+    "roll": "MM1011",
+    "name": "Sayan Roy",
+    "courses": ["RAIL"]
+  },
+  {
+    "roll": "MM1012",
+    "name": "Tania Ghosh",
+    "courses": ["ICDS", "PRIMARY TET"]
+  },
+  {
+    "roll": "MM1013",
+    "name": "Debasish Das",
+    "courses": ["PANCHAYAT", "SSC"]
+  },
+  {
+    "roll": "MM1014",
+    "name": "Ananya Roy",
+    "courses": ["UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1015",
+    "name": "Kunal Dutta",
+    "courses": ["BANK", "RAIL"]
+  },
+  {
+    "roll": "MM1016",
+    "name": "Soma Paul",
+    "courses": ["PRIMARY TET"]
+  },
+  {
+    "roll": "MM1017",
+    "name": "Rakesh Ghosh",
+    "courses": ["SSC", "PANCHAYAT"]
+  },
+  {
+    "roll": "MM1018",
+    "name": "Payel Das",
+    "courses": ["ICDS"]
+  },
+  {
+    "roll": "MM1019",
+    "name": "Subhajit Roy",
+    "courses": ["RAIL", "SSC"]
+  },
+  {
+    "roll": "MM1020",
+    "name": "Nandini Paul",
+    "courses": ["PRIMARY TET", "ICDS"]
+  },
+  {
+    "roll": "MM1021",
+    "name": "Soumik Das",
+    "courses": ["BANK"]
+  },
+  {
+    "roll": "MM1022",
+    "name": "Rupali Ghosh",
+    "courses": ["UPPER PRIMARY TET", "PRIMARY TET"]
+  },
+  {
+    "roll": "MM1023",
+    "name": "Suman Roy",
+    "courses": ["PANCHAYAT"]
+  },
+  {
+    "roll": "MM1024",
+    "name": "Madhumita Das",
+    "courses": ["SSC", "BANK"]
+  },
+  {
+    "roll": "MM1025",
+    "name": "Pradip Paul",
+    "courses": ["RAIL"]
+  },
+  {
+    "roll": "MM1026",
+    "name": "Roshni Roy",
+    "courses": ["PRIMARY TET"]
+  },
+  {
+    "roll": "MM1027",
+    "name": "Biswajit Ghosh",
+    "courses": ["SSC", "PANCHAYAT"]
+  },
+  {
+    "roll": "MM1028",
+    "name": "Mitali Das",
+    "courses": ["ICDS", "UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1029",
+    "name": "Anirban Roy",
+    "courses": ["BANK", "SSC"]
+  },
+  {
+    "roll": "MM1030",
+    "name": "Sushmita Paul",
+    "courses": ["PRIMARY TET", "UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1031",
+    "name": "Arnab Das",
+    "courses": ["RAIL", "BANK"]
+  },
+  {
+    "roll": "MM1032",
+    "name": "Debjani Ghosh",
+    "courses": ["ICDS"]
+  },
+  {
+    "roll": "MM1033",
+    "name": "Tanmay Roy",
+    "courses": ["PANCHAYAT", "SSC"]
+  },
+  {
+    "roll": "MM1034",
+    "name": "Pallabi Das",
+    "courses": ["PRIMARY TET"]
+  },
+  {
+    "roll": "MM1035",
+    "name": "Indranil Paul",
+    "courses": ["SSC", "RAIL"]
+  },
+  {
+    "roll": "MM1036",
+    "name": "Ritika Roy",
+    "courses": ["UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1037",
+    "name": "Rajib Ghosh",
+    "courses": ["BANK", "PANCHAYAT"]
+  },
+  {
+    "roll": "MM1038",
+    "name": "Madhuri Das",
+    "courses": ["ICDS", "PRIMARY TET"]
+  },
+  {
+    "roll": "MM1039",
+    "name": "Soumya Paul",
+    "courses": ["SSC"]
+  },
+  {
+    "roll": "MM1040",
+    "name": "Riya Roy",
+    "courses": ["PRIMARY TET", "UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1041",
+    "name": "Siddhartha Das",
+    "courses": ["RAIL", "SSC"]
+  },
+  {
+    "roll": "MM1042",
+    "name": "Piyali Ghosh",
+    "courses": ["ICDS"]
+  },
+  {
+    "roll": "MM1043",
+    "name": "Joydeep Roy",
+    "courses": ["BANK"]
+  },
+  {
+    "roll": "MM1044",
+    "name": "Sangita Paul",
+    "courses": ["PANCHAYAT", "SSC"]
+  },
+  {
+    "roll": "MM1045",
+    "name": "Sourav Ghosh",
+    "courses": ["RAIL", "BANK"]
+  },
+  {
+    "roll": "MM1046",
+    "name": "Payel Das",
+    "courses": ["PRIMARY TET"]
+  },
+  {
+    "roll": "MM1047",
+    "name": "Akash Roy",
+    "courses": ["SSC", "RAIL"]
+  },
+  {
+    "roll": "MM1048",
+    "name": "Tumpa Ghosh",
+    "courses": ["UPPER PRIMARY TET", "ICDS"]
+  },
+  {
+    "roll": "MM1049",
+    "name": "Suman Das",
+    "courses": ["PANCHAYAT"]
+  },
+  {
+    "roll": "MM1050",
+    "name": "Priyanka Roy",
+    "courses": ["BANK", "SSC"]
+  },
+  {
+    "roll": "MM1051",
+    "name": "Abhijit Paul",
+    "courses": ["RAIL"]
+  },
+  {
+    "roll": "MM1052",
+    "name": "Rupsa Das",
+    "courses": ["PRIMARY TET", "ICDS"]
+  },
+  {
+    "roll": "MM1053",
+    "name": "Soumen Ghosh",
+    "courses": ["SSC", "PANCHAYAT"]
+  },
+  {
+    "roll": "MM1054",
+    "name": "Mousumi Roy",
+    "courses": ["UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1055",
+    "name": "Partha Das",
+    "courses": ["BANK", "RAIL"]
+  },
+  {
+    "roll": "MM1056",
+    "name": "Rina Paul",
+    "courses": ["ICDS"]
+  },
+  {
+    "roll": "MM1057",
+    "name": "Debashis Ghosh",
+    "courses": ["SSC"]
+  },
+  {
+    "roll": "MM1058",
+    "name": "Swati Roy",
+    "courses": ["PRIMARY TET", "UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1059",
+    "name": "Raj Das",
+    "courses": ["PANCHAYAT", "SSC"]
+  },
+  {
+    "roll": "MM1060",
+    "name": "Moumita Paul",
+    "courses": ["BANK"]
+  },
+  {
+    "roll": "MM1061",
+    "name": "Kaushik Ghosh",
+    "courses": ["RAIL", "SSC"]
+  },
+  {
+    "roll": "MM1062",
+    "name": "Puja Roy",
+    "courses": ["ICDS", "PRIMARY TET"]
+  },
+  {
+    "roll": "MM1063",
+    "name": "Biplab Das",
+    "courses": ["BANK", "PANCHAYAT"]
+  },
+  {
+    "roll": "MM1064",
+    "name": "Riya Paul",
+    "courses": ["UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1065",
+    "name": "Soumik Roy",
+    "courses": ["SSC", "RAIL"]
+  },
+  {
+    "roll": "MM1066",
+    "name": "Ankita Ghosh",
+    "courses": ["PRIMARY TET"]
+  },
+  {
+    "roll": "MM1067",
+    "name": "Sanjay Das",
+    "courses": ["ICDS", "PANCHAYAT"]
+  },
+  {
+    "roll": "MM1068",
+    "name": "Poulomi Roy",
+    "courses": ["BANK", "SSC"]
+  },
+  {
+    "roll": "MM1069",
+    "name": "Rajat Paul",
+    "courses": ["RAIL"]
+  },
+  {
+    "roll": "MM1070",
+    "name": "Sreya Ghosh",
+    "courses": ["PRIMARY TET", "UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1071",
+    "name": "Aritra Das",
+    "courses": ["SSC", "PANCHAYAT"]
+  },
+  {
+    "roll": "MM1072",
+    "name": "Madhurima Roy",
+    "courses": ["ICDS"]
+  },
+  {
+    "roll": "MM1073",
+    "name": "Rohit Ghosh",
+    "courses": ["BANK", "RAIL"]
+  },
+  {
+    "roll": "MM1074",
+    "name": "Papia Das",
+    "courses": ["PRIMARY TET"]
+  },
+  {
+    "roll": "MM1075",
+    "name": "Sayan Paul",
+    "courses": ["SSC"]
+  },
+  {
+    "roll": "MM1076",
+    "name": "Rupsa Roy",
+    "courses": ["UPPER PRIMARY TET", "ICDS"]
+  },
+  {
+    "roll": "MM1077",
+    "name": "Abhishek Das",
+    "courses": ["PANCHAYAT", "BANK"]
+  },
+  {
+    "roll": "MM1078",
+    "name": "Tuli Ghosh",
+    "courses": ["PRIMARY TET", "ICDS"]
+  },
+  {
+    "roll": "MM1079",
+    "name": "Kalyan Roy",
+    "courses": ["RAIL", "SSC"]
+  },
+  {
+    "roll": "MM1080",
+    "name": "Madhumita Paul",
+    "courses": ["BANK"]
+  },
+  {
+    "roll": "MM1081",
+    "name": "Arijit Das",
+    "courses": ["SSC", "PANCHAYAT"]
+  },
+  {
+    "roll": "MM1082",
+    "name": "Sushmita Roy",
+    "courses": ["PRIMARY TET"]
+  },
+  {
+    "roll": "MM1083",
+    "name": "Dipankar Ghosh",
+    "courses": ["RAIL", "BANK"]
+  },
+  {
+    "roll": "MM1084",
+    "name": "Piyali Das",
+    "courses": ["ICDS", "UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1085",
+    "name": "Anupam Roy",
+    "courses": ["SSC"]
+  },
+  {
+    "roll": "MM1086",
+    "name": "Rima Paul",
+    "courses": ["PRIMARY TET", "PANCHAYAT"]
+  },
+  {
+    "roll": "MM1087",
+    "name": "Subrata Ghosh",
+    "courses": ["BANK", "SSC"]
+  },
+  {
+    "roll": "MM1088",
+    "name": "Mita Das",
+    "courses": ["UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1089",
+    "name": "Ranjit Roy",
+    "courses": ["RAIL", "PANCHAYAT"]
+  },
+  {
+    "roll": "MM1090",
+    "name": "Tania Paul",
+    "courses": ["ICDS", "PRIMARY TET"]
+  },
+  {
+    "roll": "MM1091",
+    "name": "Sourav Das",
+    "courses": ["SSC", "BANK"]
+  },
+  {
+    "roll": "MM1092",
+    "name": "Ritika Ghosh",
+    "courses": ["PRIMARY TET", "UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1093",
+    "name": "Arnab Roy",
+    "courses": ["RAIL"]
+  },
+  {
+    "roll": "MM1094",
+    "name": "Moumita Das",
+    "courses": ["ICDS"]
+  },
+  {
+    "roll": "MM1095",
+    "name": "Prasenjit Paul",
+    "courses": ["PANCHAYAT", "SSC"]
+  },
+  {
+    "roll": "MM1096",
+    "name": "Poulomi Ghosh",
+    "courses": ["BANK", "RAIL"]
+  },
+  {
+    "roll": "MM1097",
+    "name": "Sanjana Roy",
+    "courses": ["PRIMARY TET"]
+  },
+  {
+    "roll": "MM1098",
+    "name": "Bikash Das",
+    "courses": ["SSC", "PANCHAYAT"]
+  },
+  {
+    "roll": "MM1099",
+    "name": "Nandita Paul",
+    "courses": ["ICDS", "UPPER PRIMARY TET"]
+  },
+  {
+    "roll": "MM1100",
+    "name": "Soumya Ghosh",
+    "courses": ["BANK", "SSC", "RAIL"]
+  }
+]
     "roll": "MM1003",
     "name": "Amit Ghosh",
     "courses": ["SSC", "BANKING"]
