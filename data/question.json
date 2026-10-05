@@ -1442,286 +1442,718 @@
       }
     ]
   },
-
-   {
+ {
     "mockId": "rrb-ntpc",
-    "sectionId": "GA",
+    "sectionId": "MATH",
     "questions": [
       {
-        "id": "rrb-ntpc-GA-01",
+        "id": "rrb-ntpc-MATH-01",
+        "question": "What is 25% of 400?",
+        "options": ["50", "75", "100", "125"],
+        "answer": 2,
+        "explanation": "25% of 400 = 100."
+      },
+      {
+        "id": "rrb-ntpc-MATH-02",
+        "question": "What is 15 × 8?",
+        "options": ["100", "110", "120", "130"],
+        "answer": 2,
+        "explanation": "15 × 8 = 120."
+      },
+      {
+        "id": "rrb-ntpc-MATH-03",
+        "question": "What is the average of 10, 20, 30 and 40?",
+        "options": ["20", "25", "30", "35"],
+        "answer": 1,
+        "explanation": "Average = 100 ÷ 4 = 25."
+      },
+      {
+        "id": "rrb-ntpc-MATH-04",
+        "question": "What is the HCF of 18 and 24?",
+        "options": ["3", "6", "9", "12"],
+        "answer": 1,
+        "explanation": "The HCF of 18 and 24 is 6."
+      },
+      {
+        "id": "rrb-ntpc-MATH-05",
+        "question": "What is the LCM of 6 and 8?",
+        "options": ["12", "18", "24", "48"],
+        "answer": 2,
+        "explanation": "The LCM of 6 and 8 is 24."
+      },
+      {
+        "id": "rrb-ntpc-MATH-06",
+        "question": "A train travels 150 km in 3 hours. What is its speed?",
+        "options": ["40 km/h", "50 km/h", "60 km/h", "75 km/h"],
+        "answer": 1,
+        "explanation": "Speed = 150 ÷ 3 = 50 km/h."
+      },
+      {
+        "id": "rrb-ntpc-MATH-07",
+        "question": "What is 3/4 of 200?",
+        "options": ["100", "125", "150", "175"],
+        "answer": 2,
+        "explanation": "3/4 × 200 = 150."
+      },
+      {
+        "id": "rrb-ntpc-MATH-08",
+        "question": "If 7x = 49, find x.",
+        "options": ["5", "6", "7", "8"],
+        "answer": 2,
+        "explanation": "x = 49 ÷ 7 = 7."
+      },
+      {
+        "id": "rrb-ntpc-MATH-09",
+        "question": "What is the simple interest on ₹5000 at 10% per annum for 2 years?",
+        "options": ["₹500", "₹750", "₹1000", "₹1500"],
+        "answer": 2,
+        "explanation": "SI = 5000 × 10 × 2 / 100 = ₹1000."
+      },
+      {
+        "id": "rrb-ntpc-MATH-10",
+        "question": "What is 144 ÷ 12?",
+        "options": ["10", "11", "12", "14"],
+        "answer": 2,
+        "explanation": "144 ÷ 12 = 12."
+      },
+      {
+        "id": "rrb-ntpc-MATH-11",
+        "question": "What is 20% of 750?",
+        "options": ["100", "125", "150", "175"],
+        "answer": 2,
+        "explanation": "20% of 750 = 150."
+      },
+      {
+        "id": "rrb-ntpc-MATH-12",
+        "question": "What is 17 × 6?",
+        "options": ["92", "102", "112", "122"],
+        "answer": 1,
+        "explanation": "17 × 6 = 102."
+      },
+      {
+        "id": "rrb-ntpc-MATH-13",
+        "question": "A product costs ₹500 and is sold for ₹600. Find the profit percentage.",
+        "options": ["10%", "15%", "20%", "25%"],
+        "answer": 2,
+        "explanation": "Profit = ₹100; profit percentage = 100/500 × 100 = 20%."
+      },
+      {
+        "id": "rrb-ntpc-MATH-14",
+        "question": "What is 0.5 expressed as a percentage?",
+        "options": ["5%", "25%", "50%", "75%"],
+        "answer": 2,
+        "explanation": "0.5 × 100 = 50%."
+      },
+      {
+        "id": "rrb-ntpc-MATH-15",
+        "question": "What is the square of 20?",
+        "options": ["200", "300", "400", "500"],
+        "answer": 2,
+        "explanation": "20 × 20 = 400."
+      },
+      {
+        "id": "rrb-ntpc-MATH-16",
+        "question": "If the ratio of two numbers is 2:5 and the first number is 10, what is the second?",
+        "options": ["15", "20", "25", "30"],
+        "answer": 2,
+        "explanation": "2:5 = 10:25."
+      },
+      {
+        "id": "rrb-ntpc-MATH-17",
+        "question": "What is 45 + 35?",
+        "options": ["70", "80", "90", "100"],
+        "answer": 1,
+        "explanation": "45 + 35 = 80."
+      },
+      {
+        "id": "rrb-ntpc-MATH-18",
+        "question": "What is 5/8 of 160?",
+        "options": ["80", "100", "120", "140"],
+        "answer": 1,
+        "explanation": "5/8 × 160 = 100."
+      },
+      {
+        "id": "rrb-ntpc-MATH-19",
+        "question": "A number increases from 200 to 240. Find the percentage increase.",
+        "options": ["10%", "15%", "20%", "25%"],
+        "answer": 2,
+        "explanation": "Increase = 40; 40/200 × 100 = 20%."
+      },
+      {
+        "id": "rrb-ntpc-MATH-20",
+        "question": "What is 18²?",
+        "options": ["324", "342", "364", "384"],
+        "answer": 0,
+        "explanation": "18 × 18 = 324."
+      },
+      {
+        "id": "rrb-ntpc-MATH-21",
+        "question": "What is 12.5% of 400?",
+        "options": ["40", "50", "60", "80"],
+        "answer": 1,
+        "explanation": "12.5% of 400 = 50."
+      },
+      {
+        "id": "rrb-ntpc-MATH-22",
+        "question": "If x + 20 = 60, find x.",
+        "options": ["30", "35", "40", "45"],
+        "answer": 2,
+        "explanation": "x = 60 − 20 = 40."
+      },
+      {
+        "id": "rrb-ntpc-MATH-23",
+        "question": "What is the area of a rectangle of length 12 cm and breadth 5 cm?",
+        "options": ["50 cm²", "60 cm²", "70 cm²", "80 cm²"],
+        "answer": 1,
+        "explanation": "Area = 12 × 5 = 60 cm²."
+      },
+      {
+        "id": "rrb-ntpc-MATH-24",
+        "question": "What is the perimeter of a square with side 10 cm?",
+        "options": ["20 cm", "30 cm", "40 cm", "50 cm"],
+        "answer": 2,
+        "explanation": "Perimeter = 4 × 10 = 40 cm."
+      },
+      {
+        "id": "rrb-ntpc-MATH-25",
+        "question": "What is 1000 ÷ 20?",
+        "options": ["20", "40", "50", "60"],
+        "answer": 2,
+        "explanation": "1000 ÷ 20 = 50."
+      },
+      {
+        "id": "rrb-ntpc-MATH-26",
+        "question": "A man buys an article for ₹800 and sells it for ₹720. Find the loss percentage.",
+        "options": ["5%", "10%", "15%", "20%"],
+        "answer": 1,
+        "explanation": "Loss = ₹80; loss percentage = 80/800 × 100 = 10%."
+      },
+      {
+        "id": "rrb-ntpc-MATH-27",
+        "question": "What is 7/10 expressed as a percentage?",
+        "options": ["50%", "60%", "70%", "80%"],
+        "answer": 2,
+        "explanation": "7/10 × 100 = 70%."
+      },
+      {
+        "id": "rrb-ntpc-MATH-28",
+        "question": "What is the square root of 225?",
+        "options": ["12", "13", "15", "18"],
+        "answer": 2,
+        "explanation": "15 × 15 = 225."
+      },
+      {
+        "id": "rrb-ntpc-MATH-29",
+        "question": "A can complete a work in 20 days. What fraction of the work is completed in one day?",
+        "options": ["1/10", "1/15", "1/20", "1/25"],
+        "answer": 2,
+        "explanation": "One day's work = 1/20."
+      },
+      {
+        "id": "rrb-ntpc-MATH-30",
+        "question": "What is 25 × 4?",
+        "options": ["50", "75", "100", "125"],
+        "answer": 2,
+        "explanation": "25 × 4 = 100."
+      }
+    ]
+  },
+  {
+    "mockId": "rrb-ntpc",
+    "sectionId": "REASON",
+    "questions": [
+      {
+        "id": "rrb-ntpc-REASON-01",
+        "question": "Find the next number: 2, 4, 8, 16, ?",
+        "options": ["20", "24", "32", "36"],
+        "answer": 2,
+        "explanation": "Each number is multiplied by 2."
+      },
+      {
+        "id": "rrb-ntpc-REASON-02",
+        "question": "Find the odd one out.",
+        "options": ["Apple", "Mango", "Potato", "Banana"],
+        "answer": 2,
+        "explanation": "Potato is a vegetable; the others are fruits."
+      },
+      {
+        "id": "rrb-ntpc-REASON-03",
+        "question": "If CAT = DBU, then DOG = ?",
+        "options": ["EPH", "EOG", "DPH", "FPH"],
+        "answer": 0,
+        "explanation": "Each letter is shifted one position forward."
+      },
+      {
+        "id": "rrb-ntpc-REASON-04",
+        "question": "Find the next number: 5, 10, 20, 40, ?",
+        "options": ["60", "70", "80", "90"],
+        "answer": 2,
+        "explanation": "Each number is multiplied by 2."
+      },
+      {
+        "id": "rrb-ntpc-REASON-05",
+        "question": "Book : Reading :: Food : ?",
+        "options": ["Cooking", "Eating", "Buying", "Selling"],
+        "answer": 1,
+        "explanation": "A book is used for reading; food is used for eating."
+      },
+      {
+        "id": "rrb-ntpc-REASON-06",
+        "question": "If today is Monday, what day will it be after 10 days?",
+        "options": ["Wednesday", "Thursday", "Friday", "Saturday"],
+        "answer": 1,
+        "explanation": "10 days after Monday is Thursday."
+      },
+      {
+        "id": "rrb-ntpc-REASON-07",
+        "question": "Find the missing number: 3, 6, 9, 12, ?",
+        "options": ["14", "15", "16", "18"],
+        "answer": 1,
+        "explanation": "The sequence increases by 3."
+      },
+      {
+        "id": "rrb-ntpc-REASON-08",
+        "question": "Which number is different?",
+        "options": ["16", "25", "36", "48"],
+        "answer": 3,
+        "explanation": "16, 25 and 36 are perfect squares; 48 is not."
+      },
+      {
+        "id": "rrb-ntpc-REASON-09",
+        "question": "A is taller than B and B is taller than C. Who is shortest?",
+        "options": ["A", "B", "C", "Cannot say"],
+        "answer": 2,
+        "explanation": "C is shorter than both A and B."
+      },
+      {
+        "id": "rrb-ntpc-REASON-10",
+        "question": "Find the next letter: A, C, E, G, ?",
+        "options": ["H", "I", "J", "K"],
+        "answer": 1,
+        "explanation": "Every alternate letter is selected."
+      },
+      {
+        "id": "rrb-ntpc-REASON-11",
+        "question": "Find the next number: 1, 4, 9, 16, ?",
+        "options": ["20", "24", "25", "30"],
+        "answer": 2,
+        "explanation": "The sequence consists of consecutive square numbers."
+      },
+      {
+        "id": "rrb-ntpc-REASON-12",
+        "question": "If BAT = CBU, then RAT = ?",
+        "options": ["SBU", "SAU", "TBU", "RBU"],
+        "answer": 0,
+        "explanation": "Each letter is shifted one position forward."
+      },
+      {
+        "id": "rrb-ntpc-REASON-13",
+        "question": "Find the odd one out.",
+        "options": ["January", "March", "Monday", "May"],
+        "answer": 2,
+        "explanation": "Monday is a day; the others are months."
+      },
+      {
+        "id": "rrb-ntpc-REASON-14",
+        "question": "Find the next number: 100, 90, 80, 70, ?",
+        "options": ["50", "55", "60", "65"],
+        "answer": 2,
+        "explanation": "The sequence decreases by 10."
+      },
+      {
+        "id": "rrb-ntpc-REASON-15",
+        "question": "Complete the analogy: Bird : Fly :: Fish : ?",
+        "options": ["Run", "Swim", "Walk", "Jump"],
+        "answer": 1,
+        "explanation": "Birds fly and fish swim."
+      },
+      {
+        "id": "rrb-ntpc-REASON-16",
+        "question": "Find the missing number: 2, 5, 10, 17, ?",
+        "options": ["24", "26", "28", "30"],
+        "answer": 1,
+        "explanation": "The differences are 3, 5, 7, 9, so the next number is 26."
+      },
+      {
+        "id": "rrb-ntpc-REASON-17",
+        "question": "Which one does not belong?",
+        "options": ["Rose", "Lotus", "Lily", "Tiger"],
+        "answer": 3,
+        "explanation": "Tiger is an animal; the others are flowers."
+      },
+      {
+        "id": "rrb-ntpc-REASON-18",
+        "question": "If today is Wednesday, what day will it be after 21 days?",
+        "options": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "answer": 2,
+        "explanation": "21 days is exactly three weeks, so it will be Wednesday."
+      },
+      {
+        "id": "rrb-ntpc-REASON-19",
+        "question": "Find the next letter: B, E, H, K, ?",
+        "options": ["L", "M", "N", "O"],
+        "answer": 2,
+        "explanation": "The letters increase by 3 positions."
+      },
+      {
+        "id": "rrb-ntpc-REASON-20",
+        "question": "A is older than B. B is older than C. Who is youngest?",
+        "options": ["A", "B", "C", "Cannot say"],
+        "answer": 2,
+        "explanation": "C is younger than A and B."
+      },
+      {
+        "id": "rrb-ntpc-REASON-21",
+        "question": "Find the next number: 7, 14, 28, 56, ?",
+        "options": ["84", "98", "112", "120"],
+        "answer": 2,
+        "explanation": "Each number is multiplied by 2."
+      },
+      {
+        "id": "rrb-ntpc-REASON-22",
+        "question": "Which one is different?",
+        "options": ["Square", "Triangle", "Circle", "Carrot"],
+        "answer": 3,
+        "explanation": "Carrot is not a geometric shape."
+      },
+      {
+        "id": "rrb-ntpc-REASON-23",
+        "question": "If A = 1, B = 2 and C = 3, what is CAB?",
+        "options": ["5", "6", "7", "8"],
+        "answer": 1,
+        "explanation": "C + A + B = 3 + 1 + 2 = 6."
+      },
+      {
+        "id": "rrb-ntpc-REASON-24",
+        "question": "Find the next number: 4, 8, 16, 32, ?",
+        "options": ["48", "56", "64", "72"],
+        "answer": 2,
+        "explanation": "Each number is multiplied by 2."
+      },
+      {
+        "id": "rrb-ntpc-REASON-25",
+        "question": "Doctor : Hospital :: Teacher : ?",
+        "options": ["Office", "School", "Bank", "Market"],
+        "answer": 1,
+        "explanation": "A doctor works in a hospital and a teacher works in a school."
+      },
+      {
+        "id": "rrb-ntpc-REASON-26",
+        "question": "Find the next number: 11, 22, 33, 44, ?",
+        "options": ["50", "55", "60", "66"],
+        "answer": 1,
+        "explanation": "The sequence increases by 11."
+      },
+      {
+        "id": "rrb-ntpc-REASON-27",
+        "question": "Find the odd one out.",
+        "options": ["2", "3", "5", "9"],
+        "answer": 3,
+        "explanation": "2, 3 and 5 are prime numbers; 9 is not."
+      },
+      {
+        "id": "rrb-ntpc-REASON-28",
+        "question": "Find the next letter: Z, X, V, T, ?",
+        "options": ["R", "S", "Q", "P"],
+        "answer": 0,
+        "explanation": "The sequence moves backward by 2 letters."
+      },
+      {
+        "id": "rrb-ntpc-REASON-29",
+        "question": "Find the missing number: 10, 15, 20, 25, ?",
+        "options": ["28", "30", "35", "40"],
+        "answer": 1,
+        "explanation": "The sequence increases by 5."
+      },
+      {
+        "id": "rrb-ntpc-REASON-30",
+        "question": "Complete the analogy: Eye : See :: Ear : ?",
+        "options": ["Speak", "Hear", "Walk", "Touch"],
+        "answer": 1,
+        "explanation": "Eyes are used to see and ears are used to hear."
+      }
+    ]
+  },
+
+  {
+    "mockId": "rrb-ntpc",
+    "sectionId": "GEN",
+    "questions": [
+      {
+        "id": "rrb-ntpc-GEN-01",
         "question": "Who was the first Prime Minister of India?",
         "options": ["Sardar Patel", "Jawaharlal Nehru", "Rajendra Prasad", "B. R. Ambedkar"],
         "answer": 1,
         "explanation": "Jawaharlal Nehru was India's first Prime Minister."
       },
       {
-        "id": "rrb-ntpc-GA-02",
+        "id": "rrb-ntpc-GEN-02",
         "question": "What is the capital of India?",
         "options": ["Mumbai", "New Delhi", "Kolkata", "Chennai"],
         "answer": 1,
         "explanation": "New Delhi is the capital of India."
       },
       {
-        "id": "rrb-ntpc-GA-03",
+        "id": "rrb-ntpc-GEN-03",
         "question": "Which is the largest planet in the Solar System?",
         "options": ["Earth", "Mars", "Jupiter", "Saturn"],
         "answer": 2,
         "explanation": "Jupiter is the largest planet in the Solar System."
       },
       {
-        "id": "rrb-ntpc-GA-04",
+        "id": "rrb-ntpc-GEN-04",
         "question": "Which gas is most abundant in Earth's atmosphere?",
         "options": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
         "answer": 1,
         "explanation": "Nitrogen makes up the largest portion of Earth's atmosphere."
       },
       {
-        "id": "rrb-ntpc-GA-05",
+        "id": "rrb-ntpc-GEN-05",
         "question": "Who wrote the national anthem of India?",
         "options": ["Bankim Chandra Chattopadhyay", "Rabindranath Tagore", "Kazi Nazrul Islam", "Sarat Chandra Chattopadhyay"],
         "answer": 1,
         "explanation": "Rabindranath Tagore wrote Jana Gana Mana."
       },
       {
-        "id": "rrb-ntpc-GA-06",
+        "id": "rrb-ntpc-GEN-06",
         "question": "Which is the largest ocean in the world?",
         "options": ["Atlantic", "Indian", "Pacific", "Arctic"],
         "answer": 2,
         "explanation": "The Pacific Ocean is the largest ocean."
       },
       {
-        "id": "rrb-ntpc-GA-07",
+        "id": "rrb-ntpc-GEN-07",
         "question": "What is the chemical formula of water?",
         "options": ["CO2", "O2", "H2O", "NaCl"],
         "answer": 2,
         "explanation": "The chemical formula of water is H2O."
       },
       {
-        "id": "rrb-ntpc-GA-08",
+        "id": "rrb-ntpc-GEN-08",
         "question": "Which planet is known as the Red Planet?",
         "options": ["Venus", "Mars", "Jupiter", "Mercury"],
         "answer": 1,
         "explanation": "Mars is known as the Red Planet."
       },
       {
-        "id": "rrb-ntpc-GA-09",
+        "id": "rrb-ntpc-GEN-09",
         "question": "Who is known as the Father of the Indian Constitution?",
         "options": ["Mahatma Gandhi", "B. R. Ambedkar", "Jawaharlal Nehru", "Rajendra Prasad"],
         "answer": 1,
         "explanation": "Dr. B. R. Ambedkar is widely known as the Father of the Indian Constitution."
       },
       {
-        "id": "rrb-ntpc-GA-10",
+        "id": "rrb-ntpc-GEN-10",
         "question": "When is Republic Day celebrated in India?",
         "options": ["15 August", "26 January", "2 October", "14 November"],
         "answer": 1,
         "explanation": "Republic Day is celebrated on 26 January."
       },
       {
-        "id": "rrb-ntpc-GA-11",
+        "id": "rrb-ntpc-GEN-11",
         "question": "Which is the national flower of India?",
         "options": ["Rose", "Lotus", "Jasmine", "Sunflower"],
         "answer": 1,
         "explanation": "Lotus is India's national flower."
       },
       {
-        "id": "rrb-ntpc-GA-12",
+        "id": "rrb-ntpc-GEN-12",
         "question": "Which organ pumps blood throughout the human body?",
         "options": ["Liver", "Heart", "Kidney", "Lung"],
         "answer": 1,
         "explanation": "The heart pumps blood throughout the body."
       },
       {
-        "id": "rrb-ntpc-GA-13",
+        "id": "rrb-ntpc-GEN-13",
         "question": "Which is the nearest star to Earth?",
         "options": ["Sirius", "Sun", "Polaris", "Vega"],
         "answer": 1,
         "explanation": "The Sun is the nearest star to Earth."
       },
       {
-        "id": "rrb-ntpc-GA-14",
+        "id": "rrb-ntpc-GEN-14",
         "question": "What is the currency of Japan?",
         "options": ["Yuan", "Yen", "Won", "Dollar"],
         "answer": 1,
         "explanation": "The currency of Japan is the Yen."
       },
       {
-        "id": "rrb-ntpc-GA-15",
+        "id": "rrb-ntpc-GEN-15",
         "question": "Which vitamin is produced in the body with the help of sunlight?",
         "options": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
         "answer": 3,
         "explanation": "Sunlight helps the body produce Vitamin D."
       },
       {
-        "id": "rrb-ntpc-GA-16",
+        "id": "rrb-ntpc-GEN-16",
         "question": "Which is the largest state of India by area?",
         "options": ["Madhya Pradesh", "Rajasthan", "Maharashtra", "Uttar Pradesh"],
         "answer": 1,
         "explanation": "Rajasthan is India's largest state by area."
       },
       {
-        "id": "rrb-ntpc-GA-17",
+        "id": "rrb-ntpc-GEN-17",
         "question": "Which river is known as the longest river in India?",
         "options": ["Yamuna", "Ganga", "Godavari", "Narmada"],
         "answer": 1,
         "explanation": "The Ganga is generally regarded as the longest river in India."
       },
       {
-        "id": "rrb-ntpc-GA-18",
+        "id": "rrb-ntpc-GEN-18",
         "question": "Where is the headquarters of the Reserve Bank of India?",
         "options": ["New Delhi", "Mumbai", "Kolkata", "Chennai"],
         "answer": 1,
         "explanation": "The headquarters of RBI is in Mumbai."
       },
       {
-        "id": "rrb-ntpc-GA-19",
+        "id": "rrb-ntpc-GEN-19",
         "question": "Which metal is liquid at room temperature?",
         "options": ["Iron", "Copper", "Mercury", "Aluminium"],
         "answer": 2,
         "explanation": "Mercury is liquid at normal room temperature."
       },
       {
-        "id": "rrb-ntpc-GA-20",
+        "id": "rrb-ntpc-GEN-20",
         "question": "Who discovered the law of gravity?",
         "options": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Archimedes"],
         "answer": 1,
         "explanation": "Isaac Newton formulated the law of universal gravitation."
       },
       {
-        "id": "rrb-ntpc-GA-21",
+        "id": "rrb-ntpc-GEN-21",
         "question": "Which is the smallest planet in the Solar System?",
         "options": ["Mars", "Mercury", "Venus", "Earth"],
         "answer": 1,
         "explanation": "Mercury is the smallest planet in the Solar System."
       },
       {
-        "id": "rrb-ntpc-GA-22",
+        "id": "rrb-ntpc-GEN-22",
         "question": "What is the national animal of India?",
         "options": ["Lion", "Tiger", "Elephant", "Leopard"],
         "answer": 1,
         "explanation": "The Bengal tiger is India's national animal."
       },
       {
-        "id": "rrb-ntpc-GA-23",
+        "id": "rrb-ntpc-GEN-23",
         "question": "Which day is observed as World Environment Day?",
         "options": ["5 June", "22 April", "1 May", "16 September"],
         "answer": 0,
         "explanation": "World Environment Day is observed on 5 June."
       },
       {
-        "id": "rrb-ntpc-GA-24",
+        "id": "rrb-ntpc-GEN-24",
         "question": "Which Indian state is known as the 'Land of Rising Sun'?",
         "options": ["Assam", "Arunachal Pradesh", "Sikkim", "Manipur"],
         "answer": 1,
         "explanation": "Arunachal Pradesh is popularly known as the Land of Rising Sun."
       },
       {
-        "id": "rrb-ntpc-GA-25",
+        "id": "rrb-ntpc-GEN-25",
         "question": "Who was the first President of India?",
         "options": ["Dr. Rajendra Prasad", "Jawaharlal Nehru", "Sardar Patel", "B. R. Ambedkar"],
         "answer": 0,
         "explanation": "Dr. Rajendra Prasad was the first President of India."
       },
       {
-        "id": "rrb-ntpc-GA-26",
+        "id": "rrb-ntpc-GEN-26",
         "question": "Which is the highest civilian award in India?",
         "options": ["Padma Shri", "Padma Bhushan", "Padma Vibhushan", "Bharat Ratna"],
         "answer": 3,
         "explanation": "Bharat Ratna is India's highest civilian award."
       },
       {
-        "id": "rrb-ntpc-GA-27",
+        "id": "rrb-ntpc-GEN-27",
         "question": "Which instrument is used to measure atmospheric pressure?",
         "options": ["Thermometer", "Barometer", "Hygrometer", "Anemometer"],
         "answer": 1,
         "explanation": "A barometer measures atmospheric pressure."
       },
       {
-        "id": "rrb-ntpc-GA-28",
+        "id": "rrb-ntpc-GEN-28",
         "question": "Which gas is essential for human respiration?",
         "options": ["Nitrogen", "Oxygen", "Carbon dioxide", "Hydrogen"],
         "answer": 1,
         "explanation": "Oxygen is essential for human respiration."
       },
       {
-        "id": "rrb-ntpc-GA-29",
+        "id": "rrb-ntpc-GEN-29",
         "question": "Which is the national fruit of India?",
         "options": ["Apple", "Mango", "Banana", "Orange"],
         "answer": 1,
         "explanation": "Mango is India's national fruit."
       },
       {
-        "id": "rrb-ntpc-GA-30",
+        "id": "rrb-ntpc-GEN-30",
         "question": "Which city is known as the 'City of Joy'?",
         "options": ["Mumbai", "Kolkata", "Delhi", "Chennai"],
         "answer": 1,
         "explanation": "Kolkata is popularly known as the City of Joy."
       },
       {
-        "id": "rrb-ntpc-GA-31",
+        "id": "rrb-ntpc-GEN-31",
         "question": "Which is the largest continent?",
         "options": ["Africa", "Asia", "Europe", "North America"],
         "answer": 1,
         "explanation": "Asia is the largest continent."
       },
       {
-        "id": "rrb-ntpc-GA-32",
+        "id": "rrb-ntpc-GEN-32",
         "question": "What is the SI unit of force?",
         "options": ["Joule", "Newton", "Watt", "Pascal"],
         "answer": 1,
         "explanation": "The SI unit of force is Newton."
       },
       {
-        "id": "rrb-ntpc-GA-33",
+        "id": "rrb-ntpc-GEN-33",
         "question": "Which freedom fighter is popularly known as Netaji?",
         "options": ["Bhagat Singh", "Subhas Chandra Bose", "Bal Gangadhar Tilak", "Lala Lajpat Rai"],
         "answer": 1,
         "explanation": "Subhas Chandra Bose is popularly known as Netaji."
       },
       {
-        "id": "rrb-ntpc-GA-34",
+        "id": "rrb-ntpc-GEN-34",
         "question": "Which is the largest internal organ in the human body?",
         "options": ["Heart", "Liver", "Kidney", "Lung"],
         "answer": 1,
         "explanation": "The liver is the largest internal organ in the human body."
       },
       {
-        "id": "rrb-ntpc-GA-35",
+        "id": "rrb-ntpc-GEN-35",
         "question": "Which planet is famous for its rings?",
         "options": ["Mars", "Venus", "Saturn", "Mercury"],
         "answer": 2,
         "explanation": "Saturn is famous for its prominent ring system."
       },
       {
-        "id": "rrb-ntpc-GA-36",
+        "id": "rrb-ntpc-GEN-36",
         "question": "What is the full form of RBI?",
         "options": ["Reserve Bank of India", "Regional Bank of India", "Royal Bank of India", "Rural Bank of India"],
         "answer": 0,
         "explanation": "RBI stands for Reserve Bank of India."
       },
       {
-        "id": "rrb-ntpc-GA-37",
+        "id": "rrb-ntpc-GEN-37",
         "question": "Which Indian state has Kolkata as its capital?",
         "options": ["Bihar", "West Bengal", "Odisha", "Jharkhand"],
         "answer": 1,
         "explanation": "Kolkata is the capital of West Bengal."
       },
       {
-        "id": "rrb-ntpc-GA-38",
+        "id": "rrb-ntpc-GEN-38",
         "question": "Which blood cells help fight infections?",
         "options": ["Red blood cells", "White blood cells", "Platelets", "Plasma"],
         "answer": 1,
         "explanation": "White blood cells help the body fight infections."
       },
       {
-        "id": "rrb-ntpc-GA-39",
+        "id": "rrb-ntpc-GEN-39",
         "question": "Which is the longest bone in the human body?",
         "options": ["Tibia", "Femur", "Radius", "Humerus"],
         "answer": 1,
         "explanation": "The femur is the longest bone in the human body."
       },
       {
-        "id": "rrb-ntpc-GA-40",
+        "id": "rrb-ntpc-GEN-40",
         "question": "Which festival is known as the festival of lights?",
         "options": ["Holi", "Diwali", "Eid", "Pongal"],
         "answer": 1,
