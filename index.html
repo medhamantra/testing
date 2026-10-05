@@ -2603,6 +2603,7 @@ function requestLogout(){
   });
 }
 function doLogout(){
+   exitExamFullscreen();
   stopTicking();
   unbindUnloadGuard();
   state.exam = null; state.student = null; state.course = null;
