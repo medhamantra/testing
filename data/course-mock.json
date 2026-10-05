@@ -69,7 +69,6 @@
       }
     ]
   },
-  
   {
     "mockId": "rrb-ntpc",
     "courseId": "RAIL",
@@ -85,17 +84,17 @@
       {
         "sectionId": "GEN",
         "sectionName": "General Studies",
-        "questions": 40,
+        "questions": 40
       },
       {
         "sectionId": "MATH",
         "sectionName": "Mathematics",
-        "questions": 30,
+        "questions": 30
       },
       {
         "sectionId": "REASON",
         "sectionName": "Reasoning",
-        "questions": 30,
+        "questions": 30
       }
     ]
   }
