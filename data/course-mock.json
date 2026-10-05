@@ -68,5 +68,35 @@
         "duration": 20
       }
     ]
-  }, 
+  },
+  
+  {
+    "mockId": "rrb-ntpc",
+    "courseId": "RAIL",
+    "mockName": "RRB NTPC FILL MOCK 001",
+    "totalQuestions": 100,
+    "duration": 90,
+    "negativeMarking": 0.25,
+    "marksPerQuestion": 1,
+    "sectionWise": true,
+    "shuffleQuestions": true,
+    "shuffleOptions": true,
+    "sections": [
+      {
+        "sectionId": "GEN",
+        "sectionName": "General Studies",
+        "questions": 40,
+      },
+      {
+        "sectionId": "MATH",
+        "sectionName": "Mathematics",
+        "questions": 30,
+      },
+      {
+        "sectionId": "REASON",
+        "sectionName": "Reasoning",
+        "questions": 30,
+      }
+    ]
+  }
 ]
