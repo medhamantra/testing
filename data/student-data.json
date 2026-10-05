@@ -2,17 +2,6 @@
   {
     "roll": "MM1001",
     "name": "Rahul Das",
-    "courses": ["WBCS", "SSC"]
-  },
-  {
-    "roll": "MM1002",
-    "name": "Priya Roy",
-    "courses": ["WBCS"]
-  },
-  {[
-  {
-    "roll": "MM1001",
-    "name": "Rahul Das",
     "courses": ["SSC", "BANK"]
   },
   {
@@ -509,10 +498,5 @@
     "roll": "MM1100",
     "name": "Soumya Ghosh",
     "courses": ["BANK", "SSC", "RAIL"]
-  }
-]
-    "roll": "MM1003",
-    "name": "Amit Ghosh",
-    "courses": ["SSC", "BANKING"]
   }
 ]
