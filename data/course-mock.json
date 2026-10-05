@@ -84,21 +84,21 @@
         "sectionId": "GEN",
         "sectionName": "General Studies",
         "questions": 40,
-        "duration": 10,
+        "duration": 0,
         "sectionTimer": false
       },
       {
         "sectionId": "MATH",
         "sectionName": "Mathematics",
         "questions": 30,
-        "duration": 10,
+        "duration": 0,
         "sectionTimer": false
       },
       {
         "sectionId": "REASON",
         "sectionName": "Reasoning",
         "questions": 30,
-        "duration": 10,
+        "duration": 0,
         "sectionTimer": false
       }
     ]
