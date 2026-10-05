@@ -239,6 +239,84 @@ h1,h2,h3{font-family:var(--font-display); font-weight:600; line-height:1.22; col
    EXAM INTERFACE
 ========================================================== */
 body.exam-mode{overflow:hidden}
+/* ============================================================
+   EXAM FULLSCREEN + QUESTION AREA SCROLL
+============================================================ */
+
+html.exam-fullscreen,
+html.exam-fullscreen body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+}
+
+body.exam-mode {
+  overflow: hidden !important;
+  overscroll-behavior: none;
+}
+
+/* Fullscreen exam screen */
+body.exam-mode #examScreen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Exam shell */
+body.exam-mode .exam-shell {
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Outer exam body = NO SCROLL */
+body.exam-mode .exam-body {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+
+  display: flex;
+}
+
+/* ONLY QUESTION AREA = SCROLL */
+body.exam-mode .exam-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: auto;
+}
+
+/* Chrome / Edge scrollbar */
+body.exam-mode .exam-main::-webkit-scrollbar {
+  width: 10px;
+}
+
+body.exam-mode .exam-main::-webkit-scrollbar-track {
+  background: #e9e3d4;
+}
+
+body.exam-mode .exam-main::-webkit-scrollbar-thumb {
+  background: #8b7355;
+  border-radius: 6px;
+}
+
+body.exam-mode .exam-main::-webkit-scrollbar-thumb:hover {
+  background: #665238;
+}
 #examScreen.active{display:block}
 .exam-shell{height:100vh; height:100dvh; display:flex; flex-direction:column; background:var(--paper)}
 .exam-topbar{display:flex; align-items:center; gap:16px; padding:10px 18px; background:var(--green-900); color:#f2edda; border-bottom:3px solid var(--gold); flex:none}
@@ -1947,6 +2025,7 @@ function submitExam(reason){
 
   state.lastResult = { result, questions: analysis, savedAt: Date.now() };
   saveLastResult();
+   await exitExamFullscreen();
   state.exam = null;
   state.submitting = false;
 
@@ -2425,7 +2504,44 @@ function unbindUnloadGuard(){
 function onVisChange(){
   if(document.visibilityState === 'hidden' && state.exam) persistExam();
 }
+/* ============================================================
+   EXAM FULLSCREEN
+============================================================ */
 
+async function enterExamFullscreen(){
+  document.documentElement.classList.add('exam-fullscreen');
+  document.body.classList.add('exam-mode');
+
+  try {
+    if (!document.fullscreenElement) {
+      const el = document.documentElement;
+
+      if (el.requestFullscreen) {
+        await el.requestFullscreen({
+          navigationUI: 'hide'
+        });
+      } 
+      else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen();
+      }
+    }
+  } catch(err) {
+    console.warn('Fullscreen request blocked:', err);
+  }
+}
+
+async function exitExamFullscreen(){
+  document.documentElement.classList.remove('exam-fullscreen');
+  document.body.classList.remove('exam-mode');
+
+  try {
+    if (document.fullscreenElement) {
+      await document.exitFullscreen();
+    }
+  } catch(err) {
+    console.warn('Could not exit fullscreen:', err);
+  }
+}
 /* ============================================================
    START TEST
 ============================================================ */
@@ -2441,11 +2557,20 @@ async function startTest(){
     }
     const exam = buildExam(m);
     state.submitting = false;
-    state.exam = exam;
-    persistExam();
-    renderExam();
-    showScreen('examScreen');
-    startTicking();
+state.exam = exam;
+persistExam();
+
+/* Lock page + prepare fullscreen */
+document.documentElement.classList.add('exam-fullscreen');
+document.body.classList.add('exam-mode');
+
+renderExam();
+showScreen('examScreen');
+
+/* Enter browser fullscreen */
+await enterExamFullscreen();
+
+startTicking();
     bindUnloadGuard();
     toast(`Best of luck, ${state.student.name}! The timer has started.`, 'info', 4200);
   }catch(err){
