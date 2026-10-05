@@ -68,42 +68,38 @@
         "duration": 20
       }
     ]
-  },{
-    "mockId": "rrb-ntpc",
+  }, {
+    "mockId": "rrb",
     "courseId": "RAIL",
-    "mockName": "RRB NTPC Full Mock Test 01",
-    "totalQuestions": 40,
-    "duration": 40,
-    "negativeMarking": 0.33,
+    "mockName": "RRB NTPC FILL MOCK 001",
+    "totalQuestions": 100,
+    "duration": 90,
+    "negativeMarking": 0.25,
     "marksPerQuestion": 1,
     "sectionWise": true,
-    "sectionTime": false,
     "shuffleQuestions": true,
     "shuffleOptions": true,
     "sections": [
       {
+        "sectionId": "GEN",
+        "sectionName": "General Studies",
+        "questions": 40,
+        "duration": 10,
+        "sectionTimer": false
+      },
+      {
         "sectionId": "MATH",
         "sectionName": "Mathematics",
-        "questions": 10,
-        "duration": 10
+        "questions": 30,
+        "duration": 10,
+        "sectionTimer": false
       },
       {
         "sectionId": "REASON",
-        "sectionName": "General Intelligence & Reasoning",
-        "questions": 10,
-        "duration": 10
-      },
-      {
-        "sectionId": "GEN",
-        "sectionName": "General Awareness",
-        "questions": 10,
-        "duration": 10
-      },
-      {
-        "sectionId": "SCI",
-        "sectionName": "General Science",
-        "questions": 10,
-        "duration": 10
+        "sectionName": "Reasoning",
+        "questions": 30,
+        "duration": 10,
+        "sectionTimer": false
       }
     ]
   }
