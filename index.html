@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MEDHAMANTRA — Education Payment Receipt System</title>
+<title>MEDHAMANTRA — Payment Receipt System</title>
 <style>
 /* ============================================================
    CSS VARIABLES & THEME
@@ -269,29 +269,23 @@ a:hover { text-decoration: underline; }
    MAIN LAYOUT
    ============================================================ */
 .main-grid {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 24px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
 @media (min-width: 1100px) {
-    .main-grid {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        align-items: start;
-    }
-
-    .form-column {
-        min-width: 0;
-    }
-
-    .receipt-column {
-        min-width: 0;
-        position: sticky;
-        top: 80px;
-    }
+  .main-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+  .receipt-column {
+    position: sticky;
+    top: 80px;
+  }
 }
 
 /* ============================================================
@@ -701,6 +695,125 @@ a:hover { text-decoration: underline; }
   font-size: .85rem;
   color: #555;
   font-weight: 600;
+}
+/* ============================================================
+   DIGITAL SIGNATURE & STAMP
+   ============================================================ */
+
+.digital-signature-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 10px 0 18px;
+  padding: 12px 15px;
+  background: #F7F9F8;
+  border: 1px solid #D1E0D7;
+  border-radius: 8px;
+}
+
+.digital-signature-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.digital-signature-info strong {
+  color: #0F5132;
+  font-size: .9rem;
+}
+
+.digital-signature-info span {
+  color: #7A8A82;
+  font-size: .75rem;
+}
+
+/* Sliding switch */
+.digital-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.digital-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.digital-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #CBD5D0;
+  border-radius: 30px;
+  transition: .25s ease;
+}
+
+.digital-slider::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,.25);
+  transition: .25s ease;
+}
+
+.digital-switch input:checked + .digital-slider {
+  background: #0F5132;
+}
+
+.digital-switch input:checked + .digital-slider::before {
+  transform: translateX(24px);
+}
+
+/* Digital signature/stamp images are hidden by default */
+.digital-signature-image {
+  display: none;
+  object-fit: contain;
+  margin: 0 auto 6px;
+}
+
+/* Authorized Signature */
+.authorized-signature-image {
+  width: 150px;
+  height: 55px;
+}
+
+/* Official Stamp */
+.official-stamp-image {
+  width: 85px;
+  height: 85px;
+}
+
+/* When Digital Mode is ON */
+.receipt-page.digital-mode .digital-signature-image {
+  display: block;
+}
+
+.receipt-page.digital-mode .receipt-signature-line.digital-line {
+  display: none;
+}
+
+/* Print/PDF */
+@media print {
+  .digital-signature-control {
+    display: none !important;
+  }
+
+  .receipt-page.digital-mode .digital-signature-image {
+    display: block !important;
+  }
+
+  .receipt-page.digital-mode .receipt-signature-line.digital-line {
+    display: none !important;
+  }
 }
 
 .receipt-footer {
@@ -1152,7 +1265,7 @@ a:hover { text-decoration: underline; }
     <h1>MEDHAMANTRA</h1>
 
     <p class="login-subtitle">
-      Education Payment Receipt System
+      Payment Receipt System
     </p>
 
     <form id="loginForm">
@@ -1209,7 +1322,7 @@ a:hover { text-decoration: underline; }
       <div class="logo-fallback" id="logoFallback">MEDHA<br>MANTRA</div>
       <div class="brand-text">
         <h1>MEDHAMANTRA</h1>
-        <p>Education Payment Receipt System</p>
+        <p> Payment Receipt System</p>
       </div>
     </div>
       <button class="icon-btn" id="settingsToggle" aria-label="Open Settings" title="Settings">⚙</button>
@@ -1385,32 +1498,20 @@ a:hover { text-decoration: underline; }
             <span class="error-msg" id="amount-error"></span>
           </div>
         </div>
-       <!-- Discount -->
-<div class="discount-section">
-  <div class="form-check">
-    <input type="checkbox" id="applyDiscount">
-    <label for="applyDiscount">Apply Discount</label>
-  </div>
 
-  <div class="form-grid discount-field" id="discountPercentGroup"
-       style="display:none; margin-top:12px;">
-
-    <div class="form-group">
-      <label for="discountPercent">Discount % (0–100)</label>
-      <input type="number" id="discountPercent"
-             class="form-input" min="0" max="100"
-             step="0.01" value="0">
-    </div>
-
-    <div class="form-group">
-      <label for="discountAmountInput">Discount Amount (₹)</label>
-      <input type="number" id="discountAmountInput"
-             class="form-input" min="0"
-             step="0.01" value="0">
-    </div>
-
-  </div>
-</div>
+        <!-- Discount -->
+        <div class="discount-section">
+          <div class="form-check">
+            <input type="checkbox" id="applyDiscount">
+            <label for="applyDiscount">Apply Discount</label>
+          </div>
+          <div class="form-group discount-field" id="discountPercentGroup" style="display:none;">
+            <label for="discountPercent">Discount % (0 – 100)</label>
+            <input type="number" id="discountPercent" class="form-input" min="0" max="100" step="0.01" value="0">
+            <span class="error-msg" id="discountPercent-error"></span>
+          </div>
+        </div>
+      </div>
 
       <!-- Payment Summary -->
       <div class="card">
@@ -1452,7 +1553,7 @@ a:hover { text-decoration: underline; }
           <textarea id="remarks" class="form-textarea" rows="3" placeholder="Any additional notes..."></textarea>
         </div>
       </div>
-         <!-- Digital Signature & Stamp Toggle -->
+<!-- Digital Signature & Stamp Toggle -->
 <div class="digital-signature-control">
 
   <div class="digital-signature-info">
@@ -1468,7 +1569,6 @@ a:hover { text-decoration: underline; }
   </label>
 
 </div>
-
       <!-- Action Buttons -->
       <div class="action-buttons">
         <button class="btn btn-primary" id="generateReceiptBtn">Generate Receipt</button>
@@ -1494,7 +1594,7 @@ a:hover { text-decoration: underline; }
             <div class="receipt-logo-fallback">MEDHA<br>MANTRA</div>
             <div class="receipt-header-text">
               <h2>MEDHAMANTRA</h2>
-              <p>Education Payment Receipt</p>
+              <p>Payment Receipt</p>
             </div>
           </div>
 
@@ -1568,19 +1668,32 @@ a:hover { text-decoration: underline; }
           </div>
 
           <!-- Discount Section (conditional) -->
-          <div class="receipt-section" id="preview-discount-section" style="display:none;">
-            <h3 class="receipt-section-title">Discount</h3>
-            <table class="receipt-table">
-              <tr>
-                <td class="receipt-label">Discount %</td>
-                <td class="receipt-value" id="preview-discount-percent">0%</td>
-              </tr>
-              <tr>
-                <td class="receipt-label">Discount Amount</td>
-                <td class="receipt-value" id="preview-discount-amount">₹0</td>
-              </tr>
-            </table>
-          </div>
+        <!-- Discount -->
+<div class="discount-section">
+  <div class="form-check">
+    <input type="checkbox" id="applyDiscount">
+    <label for="applyDiscount">Apply Discount</label>
+  </div>
+
+  <div class="form-grid discount-field" id="discountPercentGroup"
+       style="display:none; margin-top:12px;">
+
+    <div class="form-group">
+      <label for="discountPercent">Discount % (0–100)</label>
+      <input type="number" id="discountPercent"
+             class="form-input" min="0" max="100"
+             step="0.01" value="0">
+    </div>
+
+    <div class="form-group">
+      <label for="discountAmountInput">Discount Amount (₹)</label>
+      <input type="number" id="discountAmountInput"
+             class="form-input" min="0"
+             step="0.01" value="0">
+    </div>
+
+  </div>
+</div>
 
           <!-- Payment Summary -->
           <div class="receipt-section">
@@ -1612,26 +1725,58 @@ a:hover { text-decoration: underline; }
           </div>
 
           <!-- Signatures -->
-          <div class="receipt-signatures">
-            <div class="receipt-signature-item">
-              <div class="receipt-signature-line"></div>
-              <p>Receiver's Signature</p>
-            </div>
-            <div class="receipt-signature-item">
-              <div class="receipt-signature-line"></div>
-              <p>Authorized Signature</p>
-            </div>
-            <div class="receipt-signature-item">
-              <div class="receipt-signature-line"></div>
-              <p>Official Stamp</p>
-            </div>
-          </div>
+<div class="receipt-signatures">
+
+  <!-- Receiver Signature - Always Blank -->
+  <div class="receipt-signature-item">
+
+    <div class="receipt-signature-line"></div>
+
+    <p>Receiver's Signature</p>
+
+  </div>
+
+
+  <!-- Authorized Signature -->
+  <div class="receipt-signature-item">
+
+    <img
+      src="./sign.jpeg"
+      alt="Authorized Signature"
+      class="digital-signature-image authorized-signature-image"
+      id="authorizedSignatureImage"
+    >
+
+    <div class="receipt-signature-line digital-line"></div>
+
+    <p>Authorized Signature</p>
+
+  </div>
+
+
+  <!-- Official Stamp -->
+  <div class="receipt-signature-item">
+
+    <img
+      src="./stamp.jpeg"
+      alt="Official Stamp"
+      class="digital-signature-image official-stamp-image"
+      id="officialStampImage"
+    >
+
+    <div class="receipt-signature-line digital-line"></div>
+
+    <p>Official Stamp</p>
+
+  </div>
+
+</div>
 
           <!-- Footer -->
           <div class="receipt-footer">
 
   <p>
-    <strong>MEDHAMANTRA</strong> — Education Payment Receipt
+    <strong>MEDHAMANTRA</strong> — Payment Receipt
   </p>
 
   <p class="receipt-footer-sub">
@@ -2384,93 +2529,55 @@ function handleCourseChange() {
    PAYMENT CALCULATIONS
    ============================================================ */
 
-function calculatePayment(source = 'percent') {
+function calculatePayment(source = 'percent', updateInput = true) {
+    const amount = parseFloat(document.getElementById('amount').value) || 0;
+    const applyDiscount = document.getElementById('applyDiscount').checked;
 
-  var amount = parseFloat(
-    document.getElementById('amount').value
-  ) || 0;
+    const percentInput = document.getElementById('discountPercent');
+    const discountAmountInput = document.getElementById('discountAmountInput');
 
-  var applyDiscount =
-    document.getElementById('applyDiscount').checked;
+    let discountPercent = 0;
+    let discountAmount = 0;
+    let payableAmount = amount;
 
-  var discountPercent = 0;
-  var discountAmount = 0;
-  var payableAmount = amount;
+    if (applyDiscount && amount > 0) {
 
-  var percentInput =
-    document.getElementById('discountPercent');
+        if (source === 'amount') {
+            discountAmount = parseFloat(discountAmountInput.value) || 0;
 
-  var discountAmountInput =
-    document.getElementById('discountAmountInput');
+            discountAmount = Math.max(0, Math.min(amount, discountAmount));
+            discountPercent = (discountAmount / amount) * 100;
 
-  if (applyDiscount && amount > 0) {
+            if (updateInput) {
+                percentInput.value = discountPercent.toFixed(2);
+            }
+        } else {
+            discountPercent = parseFloat(percentInput.value) || 0;
+            discountPercent = Math.max(0, Math.min(100, discountPercent));
 
-    if (source === 'amount') {
+            discountAmount = roundToTwo(amount * discountPercent / 100);
 
-      discountAmount =
-        parseFloat(discountAmountInput.value) || 0;
+            // Percentage input change হলে discount amount update হবে
+            discountAmountInput.value = discountAmount.toFixed(2);
+        }
 
-      discountAmount = Math.max(
-        0, Math.min(amount, discountAmount)
-      );
-
-      discountPercent =
-        (discountAmount / amount) * 100;
-
-      percentInput.value =
-        Math.round(discountPercent * 100) / 100;
-
-    } else {
-
-      discountPercent =
-        parseFloat(percentInput.value) || 0;
-
-      discountPercent = Math.max(
-        0, Math.min(100, discountPercent)
-      );
-
-      discountAmount =
-        roundToTwo(amount * discountPercent / 100);
-
-      discountAmountInput.value = discountAmount;
-
+        payableAmount = roundToTwo(amount - discountAmount);
     }
 
-    payableAmount =
-      roundToTwo(amount - discountAmount);
+    const amountPaid = parseFloat(document.getElementById('amountPaid').value) || 0;
+    const dueAmount = roundToTwo(payableAmount - amountPaid);
 
-  } else {
+    document.getElementById('payableAmount').value = formatCurrency(payableAmount);
+    document.getElementById('dueAmount').value = formatCurrency(dueAmount);
 
-    discountPercent = 0;
-    discountAmount = 0;
-    payableAmount = amount;
-
-    if (!applyDiscount) {
-      percentInput.value = 0;
-      discountAmountInput.value = 0;
-    }
-  }
-
-  var amountPaid =
-    parseFloat(document.getElementById('amountPaid').value) || 0;
-
-  var dueAmount =
-    roundToTwo(payableAmount - amountPaid);
-
-  document.getElementById('payableAmount').value =
-    formatCurrency(payableAmount);
-
-  document.getElementById('dueAmount').value =
-    formatCurrency(dueAmount);
-
-  return {
-    amount: roundToTwo(amount),
-    discountPercent: discountPercent,
-    discountAmount: discountAmount,
-    payableAmount: payableAmount,
-    amountPaid: roundToTwo(amountPaid),
-    dueAmount: dueAmount
-  };
+    return {
+        amount: roundToTwo(amount),
+        discountPercent: discountPercent,
+        discountAmount: discountAmount,
+        payableAmount: payableAmount,
+        amountPaid: roundToTwo(amountPaid),
+        dueAmount: dueAmount
+    };
 }
 
 function calculateDiscount() {
@@ -2647,7 +2754,7 @@ function updateReceiptPreview() {
   var paymentMode = document.getElementById('paymentMode').value;
   var remarks = document.getElementById('remarks').value.trim();
 
-var calc = calculatePayment('amount', false);
+ var calc = calculatePayment('amount', false);
 
   // Receipt info
   document.getElementById('preview-receipt-no').textContent = receiptNo ? escapeHtml(receiptNo) : '—';
@@ -2888,7 +2995,37 @@ async function submitPayment() {
     showNotification('Payment saved successfully. You can now print or save as PDF.', 'success');
   }
 }
+/* ============================================================
+   DIGITAL SIGNATURE & STAMP TOGGLE
+   ============================================================ */
 
+function toggleDigitalSignatureMode() {
+
+  var toggle = document.getElementById('digitalSignatureToggle');
+  var receiptPage = document.getElementById('receiptPage');
+  var status = document.getElementById('digitalModeStatus');
+
+  if (!toggle || !receiptPage) return;
+
+  if (toggle.checked) {
+
+    // Turn ON digital signature & stamp
+    receiptPage.classList.add('digital-mode');
+
+    if (status) {
+      status.textContent = 'ON — Digital signature & stamp enabled';
+    }
+
+  } else {
+
+    // Turn OFF digital signature & stamp
+    receiptPage.classList.remove('digital-mode');
+
+    if (status) {
+      status.textContent = 'OFF — Blank signature & stamp';
+    }
+  }
+}
 /* ============================================================
    PRINTING & PDF
    ============================================================ */
@@ -2903,13 +3040,44 @@ function printReceipt() {
 }
 
 function saveAsPDF() {
+
+  // Make sure receipt preview is updated
   updateReceiptPreview();
-  showNotification('Use the browser\'s print dialog and select "Save as PDF" as the destination.', 'info');
+
+  // Get Receipt No and Student Name
+  var receiptNo = document.getElementById('receiptNo').value.trim();
+  var studentName = document.getElementById('studentName').value.trim();
+
+  // Clean filename characters
+  receiptNo = receiptNo.replace(/[\\/:*?"<>|]/g, '-');
+  studentName = studentName.replace(/[\\/:*?"<>|]/g, '-');
+
+  // Create PDF filename
+  var pdfFileName = 'MEDHAMANTRA_' + receiptNo + '_' + studentName;
+
+  // Save current browser title
+  var oldTitle = document.title;
+
+  // Browser uses document title as default PDF filename
+  document.title = pdfFileName;
+
+  showNotification(
+    'PDF filename: ' + pdfFileName + '.pdf',
+    'success'
+  );
+
+  // Small delay so title updates before print dialog
   setTimeout(function () {
+
     window.print();
+
+    // Restore title after print dialog closes
+    setTimeout(function () {
+      document.title = oldTitle;
+    }, 1000);
+
   }, 200);
 }
-
 /* ============================================================
    CLEAR FORM
    ============================================================ */
@@ -2942,7 +3110,14 @@ function clearForm() {
   document.getElementById('amountPaid').value = '';
   document.getElementById('paymentMode').value = '';
   document.getElementById('remarks').value = '';
+// Reset Digital Signature & Stamp
+var digitalToggle =
+  document.getElementById('digitalSignatureToggle');
 
+if (digitalToggle) {
+  digitalToggle.checked = false;
+  toggleDigitalSignatureMode();
+}
   // Reset conditional displays
   document.getElementById('paymentPurposeGroup').style.display = 'none';
   document.getElementById('monthGroup').style.display = 'none';
@@ -3068,8 +3243,9 @@ function setupEventListeners() {
   document.getElementById('applyDiscount').addEventListener('change', handleDiscountToggle);
 
   // Amount and amount paid changes — recalculate
-  // Discount percentage input
-const discountPercentInput = document.getElementById('discountPercent');
+  document.getElementById('amount').addEventListener('input', calculatePayment);
+  document.getElementById('amountPaid').addEventListener('input', calculatePayment);
+  const discountPercentInput = document.getElementById('discountPercent');
 const discountAmountInput = document.getElementById('discountAmountInput');
 
 discountPercentInput.addEventListener('input', function () {
@@ -3086,8 +3262,6 @@ discountAmountInput.addEventListener('change', function () {
     calculatePayment('amount', true);
     updateReceiptPreview();
 });
-  document.getElementById('amountPaid').addEventListener('input', calculatePayment);
-  document.getElementById('discountPercent').addEventListener('input', calculatePayment);
 
   // Action buttons
   document.getElementById('generateReceiptBtn').addEventListener('click', generateReceipt);
@@ -3095,7 +3269,16 @@ discountAmountInput.addEventListener('change', function () {
   document.getElementById('printReceiptBtn').addEventListener('click', printReceipt);
   document.getElementById('savePdfBtn').addEventListener('click', saveAsPDF);
   document.getElementById('clearFormBtn').addEventListener('click', clearForm);
+// Digital Signature & Stamp Toggle
+var digitalSignatureToggle =
+  document.getElementById('digitalSignatureToggle');
 
+if (digitalSignatureToggle) {
+  digitalSignatureToggle.addEventListener(
+    'change',
+    toggleDigitalSignatureMode
+  );
+}
   // Course management
   document.getElementById('addCourseBtn').addEventListener('click', addCourse);
   document.getElementById('updateCourseBtn').addEventListener('click', updateCourse);
