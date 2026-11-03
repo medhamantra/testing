@@ -267,45 +267,54 @@ a:hover { text-decoration: underline; }
 
 /* ============================================================
    MAIN LAYOUT
-   ============================================================ */
+   ============================================================ *
+
 .main-grid {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 24px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
 }
 
-@media (min-width: 768px) {
-  .main-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: start;
-    gap: 20px;
-  }
-
-  .form-column,
-  .receipt-column {
-    min-width: 0;
-    width: 100%;
-  }
-
-  .receipt-column {
-    position: sticky;
-    top: 80px;
-  }
+.form-column,
+.receipt-column {
+  min-width: 0;
+  width: 100%;
 }
 
+.receipt-column {
+  position: sticky;
+  top: 90px;
+}
+
+.receipt-scroll {
+  width: 100%;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  padding: 4px;
+}
+
+/* Mobile Responsive */
 @media (max-width: 767px) {
   .main-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 16px;
   }
 
   .receipt-column {
     position: static;
   }
+
+  .receipt-scroll {
+    max-height: none;
+    overflow: visible;
+  }
 }
+
 /* ============================================================
    CARDS
    ============================================================ */
