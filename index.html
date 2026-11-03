@@ -2625,7 +2625,7 @@ function updateReceiptPreview() {
   var paymentMode = document.getElementById('paymentMode').value;
   var remarks = document.getElementById('remarks').value.trim();
 
-  var calc = calculatePayment();
+var calc = calculatePayment('amount', false);
 
   // Receipt info
   document.getElementById('preview-receipt-no').textContent = receiptNo ? escapeHtml(receiptNo) : '—';
@@ -3047,18 +3047,23 @@ function setupEventListeners() {
 
   // Amount and amount paid changes — recalculate
   // Discount percentage input
-document.getElementById('discountPercent')
-  .addEventListener('input', function () {
+const discountPercentInput = document.getElementById('discountPercent');
+const discountAmountInput = document.getElementById('discountAmountInput');
+
+discountPercentInput.addEventListener('input', function () {
     calculatePayment('percent');
     updateReceiptPreview();
-  });
+});
 
-// Discount amount input
-document.getElementById('discountAmountInput')
-  .addEventListener('input', function () {
-    calculatePayment('amount');
+discountAmountInput.addEventListener('input', function () {
+    calculatePayment('amount', false);
     updateReceiptPreview();
-  });
+});
+
+discountAmountInput.addEventListener('change', function () {
+    calculatePayment('amount', true);
+    updateReceiptPreview();
+});
   document.getElementById('amountPaid').addEventListener('input', calculatePayment);
   document.getElementById('discountPercent').addEventListener('input', calculatePayment);
 
