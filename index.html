@@ -1508,7 +1508,7 @@ a:hover { text-decoration: underline; }
           <div class="form-grid discount-field" id="discountPercentGroup" style="display:none;">
             <div class="form-group">
               <label for="discountPercent">Discount % (0 – 100)</label>
-              <input type="number" id="discountPercent" class="form-input" min="0" max="100" step="0.01" value="0">
+              <input type="number" id="discountPercent" class="form-input" min="0" max="100" step="0.000001" value="0">
               <span class="error-msg" id="discountPercent-error"></span>
             </div>
             <div class="form-group">
@@ -2569,7 +2569,7 @@ function handleDiscountAmountInput() {
   if (amount > 0) {
     discountAmount = Math.max(0, Math.min(amount, discountAmount));
     document.getElementById('discountPercent').value =
-      roundToTwo((discountAmount / amount) * 100).toFixed(2);
+      ((discountAmount / amount) * 100).toFixed(6);
   } else {
     document.getElementById('discountPercent').value = '0';
     document.getElementById('discountAmountInput').value = '0';
@@ -2598,7 +2598,7 @@ function syncDiscountFromAmount() {
   if (amount > 0) {
     discountAmount = Math.max(0, Math.min(amount, discountAmount));
     document.getElementById('discountPercent').value =
-      roundToTwo((discountAmount / amount) * 100).toFixed(2);
+      ((discountAmount / amount) * 100).toFixed(6);
   } else {
     document.getElementById('discountPercent').value = '0';
   }
