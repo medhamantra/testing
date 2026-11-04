@@ -269,7 +269,7 @@ a:hover { text-decoration: underline; }
    MAIN LAYOUT
    ============================================================ */
 .main-grid {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 24px;
   display: grid;
@@ -277,7 +277,7 @@ a:hover { text-decoration: underline; }
   gap: 24px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
   .main-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: start;
@@ -1500,32 +1500,26 @@ a:hover { text-decoration: underline; }
         </div>
 
         <!-- Discount -->
-        <!-- Discount -->
-<div class="discount-section">
-  <div class="form-check">
-    <input type="checkbox" id="applyDiscount">
-    <label for="applyDiscount">Apply Discount</label>
-  </div>
-
-  <div class="form-grid discount-field" id="discountPercentGroup"
-       style="display:none; margin-top:12px;">
-
-    <div class="form-group">
-      <label for="discountPercent">Discount % (0–100)</label>
-      <input type="number" id="discountPercent"
-             class="form-input" min="0" max="100"
-             step="0.01" value="0">
-    </div>
-
-    <div class="form-group">
-      <label for="discountAmountInput">Discount Amount (₹)</label>
-      <input type="number" id="discountAmountInput"
-             class="form-input" min="0"
-             step="0.01" value="0">
-    </div>
-
-  </div>
-</div>
+        <div class="discount-section">
+          <div class="form-check">
+            <input type="checkbox" id="applyDiscount">
+            <label for="applyDiscount">Apply Discount</label>
+          </div>
+          <div class="form-grid discount-field" id="discountPercentGroup" style="display:none;">
+            <div class="form-group">
+              <label for="discountPercent">Discount % (0 – 100)</label>
+              <input type="number" id="discountPercent" class="form-input" min="0" max="100" step="0.01" value="0">
+              <span class="error-msg" id="discountPercent-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="discountAmountInput">Discount Amount (₹)</label>
+              <input type="number" id="discountAmountInput" class="form-input" min="0" step="0.01" value="0" placeholder="Enter discount amount">
+              <span class="help-text">Enter amount to calculate discount percentage automatically.</span>
+              <span class="error-msg" id="discountAmountInput-error"></span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Payment Summary -->
       <div class="card">
@@ -1682,7 +1676,7 @@ a:hover { text-decoration: underline; }
           </div>
 
           <!-- Discount Section (conditional) -->
-  <div class="receipt-section" id="preview-discount-section" style="display:none;">
+          <div class="receipt-section" id="preview-discount-section" style="display:none;">
             <h3 class="receipt-section-title">Discount</h3>
             <table class="receipt-table">
               <tr>
@@ -1694,7 +1688,7 @@ a:hover { text-decoration: underline; }
                 <td class="receipt-value" id="preview-discount-amount">₹0</td>
               </tr>
             </table>
-          </div>       
+          </div>
 
           <!-- Payment Summary -->
           <div class="receipt-section">
@@ -2530,55 +2524,84 @@ function handleCourseChange() {
    PAYMENT CALCULATIONS
    ============================================================ */
 
-function calculatePayment(source = 'percent', updateInput = true) {
-    const amount = parseFloat(document.getElementById('amount').value) || 0;
-    const applyDiscount = document.getElementById('applyDiscount').checked;
+function calculatePayment() {
+  var amount = parseFloat(document.getElementById('amount').value) || 0;
+  var applyDiscount = document.getElementById('applyDiscount').checked;
+  var discountPercent = 0;
+  var discountAmount = 0;
+  var payableAmount = amount;
 
-    const percentInput = document.getElementById('discountPercent');
-    const discountAmountInput = document.getElementById('discountAmountInput');
+  if (applyDiscount) {
+    discountPercent = parseFloat(document.getElementById('discountPercent').value) || 0;
+    discountPercent = Math.max(0, Math.min(100, discountPercent));
+    discountAmount = roundToTwo((amount * discountPercent) / 100);
 
-    let discountPercent = 0;
-    let discountAmount = 0;
-    let payableAmount = amount;
-
-    if (applyDiscount && amount > 0) {
-
-        if (source === 'amount') {
-            discountAmount = parseFloat(discountAmountInput.value) || 0;
-
-            discountAmount = Math.max(0, Math.min(amount, discountAmount));
-            discountPercent = (discountAmount / amount) * 100;
-
-            if (updateInput) {
-                percentInput.value = discountPercent.toFixed(2);
-            }
-        } else {
-            discountPercent = parseFloat(percentInput.value) || 0;
-            discountPercent = Math.max(0, Math.min(100, discountPercent));
-
-            discountAmount = roundToTwo(amount * discountPercent / 100);
-
-            // Percentage input change হলে discount amount update হবে
-            discountAmountInput.value = discountAmount.toFixed(2);
-        }
-
-        payableAmount = roundToTwo(amount - discountAmount);
+    // Keep the discount amount field synced with the percentage.
+    var discountAmountInput = document.getElementById('discountAmountInput');
+    if (discountAmountInput && document.activeElement !== discountAmountInput) {
+      discountAmountInput.value = discountAmount.toFixed(2);
     }
 
-    const amountPaid = parseFloat(document.getElementById('amountPaid').value) || 0;
-    const dueAmount = roundToTwo(payableAmount - amountPaid);
+    payableAmount = roundToTwo(amount - discountAmount);
+  }
 
-    document.getElementById('payableAmount').value = formatCurrency(payableAmount);
-    document.getElementById('dueAmount').value = formatCurrency(dueAmount);
+  var amountPaid = parseFloat(document.getElementById('amountPaid').value) || 0;
+  var dueAmount = roundToTwo(payableAmount - amountPaid);
 
-    return {
-        amount: roundToTwo(amount),
-        discountPercent: discountPercent,
-        discountAmount: discountAmount,
-        payableAmount: payableAmount,
-        amountPaid: roundToTwo(amountPaid),
-        dueAmount: dueAmount
-    };
+  document.getElementById('payableAmount').value = formatCurrency(payableAmount);
+  document.getElementById('dueAmount').value = formatCurrency(dueAmount);
+
+  return {
+    amount: roundToTwo(amount),
+    discountPercent: discountPercent,
+    discountAmount: discountAmount,
+    payableAmount: payableAmount,
+    amountPaid: roundToTwo(amountPaid),
+    dueAmount: dueAmount
+  };
+}
+
+// When staff enters discount amount directly, convert it to percentage.
+function handleDiscountAmountInput() {
+  var amount = parseFloat(document.getElementById('amount').value) || 0;
+  var discountAmount = parseFloat(document.getElementById('discountAmountInput').value) || 0;
+
+  if (amount > 0) {
+    discountAmount = Math.max(0, Math.min(amount, discountAmount));
+    document.getElementById('discountPercent').value =
+      roundToTwo((discountAmount / amount) * 100).toFixed(2);
+  } else {
+    document.getElementById('discountPercent').value = '0';
+    document.getElementById('discountAmountInput').value = '0';
+  }
+
+  calculatePayment();
+  updateReceiptPreview();
+  clearFieldError('discountAmountInput');
+}
+
+// When staff enters percentage, convert it to discount amount.
+function handleDiscountPercentInput() {
+  calculatePayment();
+  updateReceiptPreview();
+  clearFieldError('discountPercent');
+}
+
+// Recalculate percentage if the original fee amount changes while discount amount is entered.
+function syncDiscountFromAmount() {
+  var discountAmountInput = document.getElementById('discountAmountInput');
+  if (!discountAmountInput || !document.getElementById('applyDiscount').checked) return;
+
+  var amount = parseFloat(document.getElementById('amount').value) || 0;
+  var discountAmount = parseFloat(discountAmountInput.value) || 0;
+
+  if (amount > 0) {
+    discountAmount = Math.max(0, Math.min(amount, discountAmount));
+    document.getElementById('discountPercent').value =
+      roundToTwo((discountAmount / amount) * 100).toFixed(2);
+  } else {
+    document.getElementById('discountPercent').value = '0';
+  }
 }
 
 function calculateDiscount() {
@@ -2702,6 +2725,11 @@ function validateForm() {
     } else if (discountPercent < 0 || discountPercent > 100) {
       errors.push({ field: 'discountPercent', message: 'Discount must be between 0 and 100.' });
     }
+
+    var enteredDiscountAmount = parseFloat(document.getElementById('discountAmountInput').value) || 0;
+    if (enteredDiscountAmount < 0 || enteredDiscountAmount > amount) {
+      errors.push({ field: 'discountAmountInput', message: 'Discount amount cannot exceed the original amount.' });
+    }
   }
 
   // Amount paid
@@ -2755,7 +2783,7 @@ function updateReceiptPreview() {
   var paymentMode = document.getElementById('paymentMode').value;
   var remarks = document.getElementById('remarks').value.trim();
 
- var calc = calculatePayment('amount', false);
+  var calc = calculatePayment();
 
   // Receipt info
   document.getElementById('preview-receipt-no').textContent = receiptNo ? escapeHtml(receiptNo) : '—';
@@ -3108,6 +3136,7 @@ function clearForm() {
   document.getElementById('amount').value = '';
   document.getElementById('applyDiscount').checked = false;
   document.getElementById('discountPercent').value = '0';
+  document.getElementById('discountAmountInput').value = '0';
   document.getElementById('amountPaid').value = '';
   document.getElementById('paymentMode').value = '';
   document.getElementById('remarks').value = '';
@@ -3215,7 +3244,7 @@ function setupEventListeners() {
   var liveUpdateFields = [
     'receiptNo', 'receiptDate', 'studentName', 'rollNo', 'mobile',
     'courseSelect', 'paymentType', 'paymentPurpose', 'monthSelect', 'yearInput',
-    'amount', 'discountPercent', 'amountPaid', 'paymentMode', 'remarks','discountAmountInput'
+    'amount', 'discountPercent', 'discountAmountInput', 'amountPaid', 'paymentMode', 'remarks'
   ];
 
   liveUpdateFields.forEach(function (id) {
@@ -3244,25 +3273,14 @@ function setupEventListeners() {
   document.getElementById('applyDiscount').addEventListener('change', handleDiscountToggle);
 
   // Amount and amount paid changes — recalculate
-  document.getElementById('amount').addEventListener('input', calculatePayment);
+  document.getElementById('amount').addEventListener('input', function () {
+    syncDiscountFromAmount();
+    calculatePayment();
+    updateReceiptPreview();
+  });
   document.getElementById('amountPaid').addEventListener('input', calculatePayment);
-  const discountPercentInput = document.getElementById('discountPercent');
-const discountAmountInput = document.getElementById('discountAmountInput');
-
-discountPercentInput.addEventListener('input', function () {
-    calculatePayment('percent');
-    updateReceiptPreview();
-});
-
-discountAmountInput.addEventListener('input', function () {
-    calculatePayment('amount', false);
-    updateReceiptPreview();
-});
-
-discountAmountInput.addEventListener('change', function () {
-    calculatePayment('amount', true);
-    updateReceiptPreview();
-});
+  document.getElementById('discountPercent').addEventListener('input', handleDiscountPercentInput);
+  document.getElementById('discountAmountInput').addEventListener('input', handleDiscountAmountInput);
 
   // Action buttons
   document.getElementById('generateReceiptBtn').addEventListener('click', generateReceipt);
